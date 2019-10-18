@@ -78,12 +78,13 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         let elementClassName = ["onboarding-trigger js-onboarding-trigger d-flex j-content-center a-items-center", "layout-header js-layout-header fixed-top "]
-
+        
         for className in elementClassName {
             let removeElementClassScript = "var element = document.getElementsByClassName('\(className)') [0]; element.parentNode.removeChild(element);"
             webView.evaluateJavaScript(removeElementClassScript) { (response, error) in
-                       debugPrint("Am here")
-                   }
+                debugPrint("Am here")
+                self.webView.scrollView.setContentOffset(.zero, animated: true)
+            }
         }
         
         UIView.animate(withDuration: 0.4) { [weak self] in
@@ -91,7 +92,8 @@ extension WebViewController: WKNavigationDelegate {
             self?.activityIndicator.isHidden = true
             self?.webView.alpha = 1
         }
-       
+        
+        
         
     }
     
