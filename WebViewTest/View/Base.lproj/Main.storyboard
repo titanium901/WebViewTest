@@ -59,6 +59,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="R3Q-Fv-qgg" id="jGS-IS-jd7"/>
                         <outlet property="backButton" destination="aOd-MB-Y6B" id="HWA-XJ-RE4"/>
+                        <outlet property="logoImage" destination="uy8-oB-B8f" id="4gE-7H-sig"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
