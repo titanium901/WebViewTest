@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
                                 <rect key="frame" x="0.0" y="151" width="414" height="745"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -26,20 +26,39 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faberlicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-oB-B8f">
+                                <rect key="frame" x="127" y="52" width="160" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="5Cq-94-XK8"/>
+                                    <constraint firstAttribute="height" constant="40" id="jBb-Qz-22Y"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
+                                <rect key="frame" x="20" y="60" width="43" height="25"/>
+                                <state key="normal" image="arrowBack"/>
+                                <connections>
+                                    <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Su-hn-I1m"/>
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5PE-EX-yKP"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Pp-2f-rKy"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="NyY-vF-1vn"/>
                             <constraint firstAttribute="bottom" secondItem="i2S-nn-e2r" secondAttribute="bottom" id="W5c-8V-dxP"/>
+                            <constraint firstItem="uy8-oB-B8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="gAc-ju-U0M"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="107" id="gts-O6-agM"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hEr-o6-u6N"/>
+                            <constraint firstItem="uy8-oB-B8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hX3-0f-Lxc"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j95-7U-d5N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="R3Q-Fv-qgg" id="jGS-IS-jd7"/>
+                        <outlet property="backButton" destination="aOd-MB-Y6B" id="HWA-XJ-RE4"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
@@ -48,4 +67,8 @@
             <point key="canvasLocation" x="121.73913043478262" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowBack" width="43" height="25"/>
+        <image name="faberlicLogo" width="619" height="93"/>
+    </resources>
 </document>
