@@ -15,6 +15,7 @@
 		CA535AC22359A9500005C577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA535AC02359A9500005C577 /* LaunchScreen.storyboard */; };
 		CA535ACE2359EBBD0005C577 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535ACD2359EBBD0005C577 /* ContainerViewController.swift */; };
 		CA535AD02359EBCC0005C577 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535ACF2359EBCC0005C577 /* MenuViewController.swift */; };
+		CA535AD2235A10AA0005C577 /* SetupUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AD1235A10AA0005C577 /* SetupUrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CA535AC32359A9500005C577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA535ACD2359EBBD0005C577 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CA535ACF2359EBCC0005C577 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CA535AD1235A10AA0005C577 /* SetupUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				CA535ACC2359BC6F0005C577 /* View */,
 				CA535ACA2359BC470005C577 /* Controllers */,
+				CA535AD3235A11360005C577 /* Services */,
 				CA535ACB2359BC650005C577 /* Resourse */,
 				CA535AC92359BC400005C577 /* Supporting Files */,
 			);
@@ -103,6 +106,14 @@
 				CA535AC02359A9500005C577 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CA535AD3235A11360005C577 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA535AD1235A10AA0005C577 /* SetupUrl.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA535ABA2359A94F0005C577 /* WebViewController.swift in Sources */,
+				CA535AD2235A10AA0005C577 /* SetupUrl.swift in Sources */,
 				CA535AD02359EBCC0005C577 /* MenuViewController.swift in Sources */,
 				CA535AB62359A94F0005C577 /* AppDelegate.swift in Sources */,
 				CA535ACE2359EBBD0005C577 /* ContainerViewController.swift in Sources */,
