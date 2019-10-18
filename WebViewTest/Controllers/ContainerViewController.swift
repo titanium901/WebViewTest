@@ -12,6 +12,7 @@ class ContainerViewController: UIViewController {
 
     var controller: UIViewController!
     var menuViewController: UIViewController!
+    var isMove = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,35 @@ class ContainerViewController: UIViewController {
     
     func configureMenuViewController() {
         if menuViewController == nil {
-            menuViewController = MenuViewController()
+            menuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MenuViewController") as! MenuViewController
             view.insertSubview(menuViewController.view, at: 0)
             addChild(menuViewController)
+        }
+    }
+    
+    func showMenuViewController(shouldMove: Bool) {
+        if shouldMove {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.controller.view.frame.origin.x = self.controller.view.frame.width - 140
+            }) { (finished) in
+                
+            }
+        } else {
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.controller.view.frame.origin.x = 0
+            }) { (finished) in
+                
+            }
         }
     }
 
@@ -41,6 +68,8 @@ class ContainerViewController: UIViewController {
 extension ContainerViewController: WebViewControllerDelegate {
     func toggleMenu() {
         configureMenuViewController()
+        isMove = !isMove
+        showMenuViewController(shouldMove: isMove)
     }
     
     
