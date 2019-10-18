@@ -9,6 +9,10 @@
 import UIKit
 import WebKit
 
+protocol WebViewControllerDelegate {
+    func toggleMenu()
+}
+
 class WebViewController: UIViewController {
 
     
@@ -16,9 +20,11 @@ class WebViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var menuButton: UIButton!
     
     private var lastContentOffset: CGFloat = 10
     private var website = "https://new.faberlic.com/"
+    var delegate: WebViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,11 @@ class WebViewController: UIViewController {
     @IBAction func backAction(_ sender: UIButton) {
         webView.goBack()
     }
+    
+    @IBAction func menuButton(_ sender: UIButton) {
+        delegate?.toggleMenu()
+    }
+    
     
     func setupUI() {
         backButton.isHidden = true
@@ -106,8 +117,6 @@ extension WebViewController: UIScrollViewDelegate {
        }
 
        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(lastContentOffset)
-        print(scrollView.contentOffset.y)
         if lastContentOffset > scrollView.contentOffset.y {
                UIView.animate(withDuration: 0.25, animations: { [weak self] in
                    self?.logoImage.alpha = 1.0

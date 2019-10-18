@@ -40,6 +40,14 @@
                                     <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrn-i1-AfY">
+                                <rect key="frame" x="24" y="93" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="36q-PW-42j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -56,16 +64,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HRU-2Q-Ude"/>
                     <connections>
                         <outlet property="activityIndicator" destination="R3Q-Fv-qgg" id="jGS-IS-jd7"/>
                         <outlet property="backButton" destination="aOd-MB-Y6B" id="HWA-XJ-RE4"/>
                         <outlet property="logoImage" destination="uy8-oB-B8f" id="4gE-7H-sig"/>
+                        <outlet property="menuButton" destination="Wrn-i1-AfY" id="1SF-B6-xFx"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121.73913043478262" y="126.5625"/>
+            <point key="canvasLocation" x="652" y="-109"/>
         </scene>
     </scenes>
     <resources>
