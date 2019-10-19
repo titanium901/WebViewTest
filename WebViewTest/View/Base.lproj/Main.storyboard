@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="149" width="414" height="747"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -26,12 +26,16 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faberlicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-oB-B8f">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faberlicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-oB-B8f">
                                 <rect key="frame" x="127" y="52" width="160" height="40"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="5Cq-94-XK8"/>
                                     <constraint firstAttribute="height" constant="40" id="jBb-Qz-22Y"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="b0Q-JI-cJP" appends="YES" id="zra-23-aQm"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
                                 <rect key="frame" x="20" y="60" width="43" height="25"/>
@@ -94,8 +98,8 @@
                                     <constraint firstItem="JcH-Ok-G0r" firstAttribute="leading" secondItem="lLc-wz-wMq" secondAttribute="leading" constant="8" id="z2u-gP-KOf"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKy-MQ-hbv">
-                                <rect key="frame" x="0.0" y="160" width="230" height="736"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKy-MQ-hbv">
+                                <rect key="frame" x="0.0" y="152" width="230" height="744"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-Le-TGr">
                                         <rect key="frame" x="0.0" y="0.0" width="230" height="56"/>
@@ -104,11 +108,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="a71-Lv-MeS">
                                         <rect key="frame" x="8" y="56" width="213.5" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-CJ-a5c">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-CJ-a5c">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="eHG-XF-Inz" appends="YES" id="4w0-x3-IDU"/>
+                                                </connections>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW7-vC-8oS">
                                                 <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
@@ -116,7 +124,6 @@
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="openListButtonAction:" destination="N2j-lM-ASo" eventType="touchUpInside" id="TIz-EY-Otv"/>
                                                     <action selector="openListButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuf-G8-vvF"/>
                                                 </connections>
                                             </button>
@@ -125,73 +132,100 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hgI-4g-Wgd">
                                         <rect key="frame" x="21" y="94" width="161" height="390"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHw-kc-tU4">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHw-kc-tU4">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <state key="normal" title="Новинки">
                                                     <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="newActionButton:" destination="N2j-lM-ASo" eventType="touchUpInside" id="XRL-zP-mSQ"/>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZbX-Yp-hWP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-nl-r2w">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-nl-r2w">
                                                 <rect key="frame" x="0.0" y="40" width="67" height="30"/>
                                                 <state key="normal" title="Косетика">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0h-Vo-QgS"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llv-iW-Kmn">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llv-iW-Kmn">
                                                 <rect key="frame" x="0.0" y="80" width="96" height="30"/>
                                                 <state key="normal" title="Парфюмерия">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZRY-oY-bC9"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-fW-t8v">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-fW-t8v">
                                                 <rect key="frame" x="0.0" y="120" width="161" height="30"/>
                                                 <state key="normal" title="Одежда и Аксессуары">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VT-pp-4M9"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avw-1Z-GLi">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avw-1Z-GLi">
                                                 <rect key="frame" x="0.0" y="160" width="69" height="30"/>
                                                 <state key="normal" title="Здоровье">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3L-ls-XTq"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-rm-5jM">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-rm-5jM">
                                                 <rect key="frame" x="0.0" y="200" width="31" height="30"/>
                                                 <state key="normal" title="Дом">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9pe-v0-hxw"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cin-uF-gFd">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cin-uF-gFd">
                                                 <rect key="frame" x="0.0" y="240" width="45" height="30"/>
                                                 <state key="normal" title="Детям">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKG-fE-kFA"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-tr-v4b">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-tr-v4b">
                                                 <rect key="frame" x="0.0" y="280" width="78" height="30"/>
                                                 <state key="normal" title="Мужчинам">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wg-Dr-wBh"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-Te-a5G">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-Te-a5G">
                                                 <rect key="frame" x="0.0" y="320" width="91" height="30"/>
                                                 <state key="normal" title="Для Бизнеса">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIv-ck-gKf"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-1M-OE4">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-1M-OE4">
                                                 <rect key="frame" x="0.0" y="360" width="45" height="30"/>
                                                 <state key="normal" title="Акции">
                                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSR-Gp-JE6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="892-64-05E">
-                                        <rect key="frame" x="8" y="492" width="235.5" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="892-64-05E">
+                                        <rect key="frame" x="8" y="492" width="213.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Главное Меню" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTJ-vm-k9j">
                                                 <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
@@ -199,11 +233,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lr-xh-Qd9">
-                                                <rect key="frame" x="205.5" y="0.0" width="30" height="30"/>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lr-xh-Qd9">
+                                                <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="▷">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvc-cM-SI8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -212,6 +249,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hgI-4g-Wgd" secondAttribute="trailing" constant="48" id="70q-Hc-MVn"/>
                                     <constraint firstItem="uVG-Le-TGr" firstAttribute="top" secondItem="wKy-MQ-hbv" secondAttribute="top" id="H3l-sF-8iP"/>
+                                    <constraint firstItem="892-64-05E" firstAttribute="width" secondItem="a71-Lv-MeS" secondAttribute="width" id="Jmv-AJ-dkX"/>
                                     <constraint firstItem="a71-Lv-MeS" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" constant="8" id="WtB-hd-3QZ"/>
                                     <constraint firstAttribute="trailing" secondItem="uVG-Le-TGr" secondAttribute="trailing" id="Zbt-Aa-c9Y"/>
                                     <constraint firstItem="uVG-Le-TGr" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" id="agV-AO-GGq"/>
@@ -231,12 +269,12 @@
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5PE-EX-yKP"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Pp-2f-rKy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLc-wz-wMq" secondAttribute="trailing" constant="20" id="8qq-l2-JVv"/>
-                            <constraint firstItem="wKy-MQ-hbv" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="bottom" constant="8" id="BMc-ra-jgn"/>
+                            <constraint firstItem="wKy-MQ-hbv" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="bottom" id="BMc-ra-jgn"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="top" secondItem="uy8-oB-B8f" secondAttribute="bottom" id="CJn-i1-ry6"/>
                             <constraint firstItem="aOd-MB-Y6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="NyY-vF-1vn"/>
                             <constraint firstAttribute="bottom" secondItem="i2S-nn-e2r" secondAttribute="bottom" id="W5c-8V-dxP"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="gAc-ju-U0M"/>
-                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gts-O6-agM"/>
+                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="gts-O6-agM"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hEr-o6-u6N"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hX3-0f-Lxc"/>
                             <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j95-7U-d5N"/>
@@ -254,161 +292,25 @@
                         <outlet property="mainToProductConstraint" destination="sIt-IF-vdL" id="xwf-zX-gcy"/>
                         <outlet property="menuButton" destination="Wrn-i1-AfY" id="1SF-B6-xFx"/>
                         <outlet property="openListButton" destination="IW7-vC-8oS" id="eyw-1W-5Oc"/>
+                        <outlet property="searchBar" destination="uVG-Le-TGr" id="bbJ-yo-cCb"/>
                         <outlet property="sideBarLeadingConstraint" destination="wKW-9a-JYd" id="0bg-mz-UHV"/>
                         <outlet property="slideView" destination="wKy-MQ-hbv" id="bvY-7e-ik1"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eHG-XF-Inz">
+                    <connections>
+                        <action selector="productLabelGestureOnTap:" destination="BYZ-38-t0r" id="BxZ-vU-tZW"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="b0Q-JI-cJP">
+                    <connections>
+                        <action selector="tapOnLogoGest:" destination="BYZ-38-t0r" id="w7Q-XW-YkV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="-119.19642857142857"/>
-        </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="bak-Jw-7jM">
-            <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="N2j-lM-ASo" customClass="MenuViewController" customModule="WebViewTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZOv-pa-jvH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ruY-bg-cLS">
-                                <rect key="frame" x="0.0" y="44" width="274" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="122" translatesAutoresizingMaskIntoConstraints="NO" id="odc-yt-wic">
-                                <rect key="frame" x="20" y="100" width="254" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txd-lV-h0i">
-                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeX-PO-bRr">
-                                        <rect key="frame" x="242.5" y="0.0" width="11.5" height="30"/>
-                                        <state key="normal" title="▽">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="openListButtonAction:" destination="N2j-lM-ASo" eventType="touchUpInside" id="YM7-xe-09Z"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7w0-o1-hvQ">
-                                <rect key="frame" x="42" y="138" width="161" height="390"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIq-2v-Prq">
-                                        <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
-                                        <state key="normal" title="Новинки">
-                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newActionButton:" destination="N2j-lM-ASo" eventType="touchUpInside" id="ZnP-o8-VIH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2P-Ey-XXK">
-                                        <rect key="frame" x="0.0" y="40" width="67" height="30"/>
-                                        <state key="normal" title="Косетика">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm0-tf-roj">
-                                        <rect key="frame" x="0.0" y="80" width="96" height="30"/>
-                                        <state key="normal" title="Парфюмерия">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLs-bt-Qut">
-                                        <rect key="frame" x="0.0" y="120" width="161" height="30"/>
-                                        <state key="normal" title="Одежда и Аксессуары">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm2-G1-23Q">
-                                        <rect key="frame" x="0.0" y="160" width="69" height="30"/>
-                                        <state key="normal" title="Здоровье">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZL-Kr-m6y">
-                                        <rect key="frame" x="0.0" y="200" width="31" height="30"/>
-                                        <state key="normal" title="Дом">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0I-Uc-dm9">
-                                        <rect key="frame" x="0.0" y="240" width="45" height="30"/>
-                                        <state key="normal" title="Детям">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7j-32-p8A">
-                                        <rect key="frame" x="0.0" y="280" width="78" height="30"/>
-                                        <state key="normal" title="Мужчинам">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="632-9o-EjJ">
-                                        <rect key="frame" x="0.0" y="320" width="91" height="30"/>
-                                        <state key="normal" title="Для Бизнеса">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOU-UG-2lU">
-                                        <rect key="frame" x="0.0" y="360" width="45" height="30"/>
-                                        <state key="normal" title="Акции">
-                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="122" translatesAutoresizingMaskIntoConstraints="NO" id="goN-Q0-u1g">
-                                <rect key="frame" x="20" y="536" width="254" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Главное Меню" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSp-YS-PZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR6-rj-0C5">
-                                        <rect key="frame" x="242.5" y="0.0" width="11.5" height="30"/>
-                                        <state key="normal" title="▷">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Wqe-uG-gQ6" firstAttribute="trailing" secondItem="7w0-o1-hvQ" secondAttribute="trailing" constant="211" id="7Bg-v0-aj5"/>
-                            <constraint firstItem="7w0-o1-hvQ" firstAttribute="leading" secondItem="Wqe-uG-gQ6" secondAttribute="leading" constant="42" id="9vm-Z6-kVc"/>
-                            <constraint firstItem="goN-Q0-u1g" firstAttribute="leading" secondItem="Wqe-uG-gQ6" secondAttribute="leading" constant="20" id="CEf-Qe-eab"/>
-                            <constraint firstItem="goN-Q0-u1g" firstAttribute="top" secondItem="odc-yt-wic" secondAttribute="bottom" constant="406" id="RKd-Qq-bCa"/>
-                            <constraint firstItem="goN-Q0-u1g" firstAttribute="width" secondItem="odc-yt-wic" secondAttribute="width" id="XJY-A8-ZjB"/>
-                            <constraint firstItem="odc-yt-wic" firstAttribute="top" secondItem="ruY-bg-cLS" secondAttribute="bottom" id="Xl1-Gb-MH8"/>
-                            <constraint firstItem="Wqe-uG-gQ6" firstAttribute="trailing" secondItem="odc-yt-wic" secondAttribute="trailing" constant="140" id="aJc-PJ-wLU"/>
-                            <constraint firstItem="ruY-bg-cLS" firstAttribute="leading" secondItem="Wqe-uG-gQ6" secondAttribute="leading" id="fzk-Ou-yrh"/>
-                            <constraint firstItem="7w0-o1-hvQ" firstAttribute="top" secondItem="odc-yt-wic" secondAttribute="bottom" constant="8" id="jNM-R1-rfd"/>
-                            <constraint firstItem="Wqe-uG-gQ6" firstAttribute="trailing" secondItem="goN-Q0-u1g" secondAttribute="trailing" constant="140" id="joU-v9-5Rf"/>
-                            <constraint firstItem="txd-lV-h0i" firstAttribute="width" secondItem="LSp-YS-PZQ" secondAttribute="width" id="rsN-0t-25t"/>
-                            <constraint firstItem="ruY-bg-cLS" firstAttribute="top" secondItem="Wqe-uG-gQ6" secondAttribute="top" id="tYl-RU-H2d"/>
-                            <constraint firstItem="Wqe-uG-gQ6" firstAttribute="trailing" secondItem="ruY-bg-cLS" secondAttribute="trailing" constant="140" id="uSi-d3-oDI"/>
-                            <constraint firstItem="odc-yt-wic" firstAttribute="leading" secondItem="Wqe-uG-gQ6" secondAttribute="leading" constant="20" id="ygq-Kt-ULU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Wqe-uG-gQ6"/>
-                    </view>
-                    <connections>
-                        <outlet property="listStackView" destination="7w0-o1-hvQ" id="UGc-f9-N2R"/>
-                        <outlet property="mainToProductConstraint" destination="RKd-Qq-bCa" id="3Oo-hM-dy8"/>
-                        <outlet property="openListButton" destination="zeX-PO-bRr" id="WvN-J3-Y3V"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wga-mH-MDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="17" y="-118"/>
         </scene>
     </scenes>
     <resources>

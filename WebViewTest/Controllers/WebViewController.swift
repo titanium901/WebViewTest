@@ -15,7 +15,7 @@ protocol WebViewControllerDelegate {
 
 class WebViewController: UIViewController {
 
-    
+    //MARK: -IBOutlet
     @IBOutlet weak var listStackView: UIStackView!
     @IBOutlet weak var mainToProductConstraint: NSLayoutConstraint!
     @IBOutlet weak var openListButton: UIButton!
@@ -26,7 +26,9 @@ class WebViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var sideBarLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var slideView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
+    //MARK: -Properties
     private var lastContentOffset: CGFloat = 10
     private var website = "https://new.faberlic.com/"
     var delegate: WebViewControllerDelegate?
@@ -34,38 +36,29 @@ class WebViewController: UIViewController {
     var isMenuShowing = false
     var isOpen = true
     
+    //MARK: -VieDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
-        self.webView.scrollView.delegate = self
-        showMenu()
+        webView.scrollView.delegate = self
+        searchBar.delegate = self
+        showSlideMenu()
 
         
     }
     
+    //MARK: -IBActions
+    
     @IBAction func openListButtonAction(_ sender: UIButton) {
-        isOpen.toggle()
-        if !isOpen {
-            mainToProductConstraint.constant = 8
-            listStackView.isUserInteractionEnabled = false
-            openListButton.setTitle("▷", for: .normal)
-        } else {
-            mainToProductConstraint.constant = 406
-            listStackView.isUserInteractionEnabled = true
-            openListButton.setTitle("▽", for: .normal)
-        }
-        UIView.animate(withDuration: 1) {
-            self.view.layoutIfNeeded()
-            self.listStackView.alpha = self.isOpen ? 1 : 0
-        }
+       animateMenu()
     }
     @IBAction func backAction(_ sender: UIButton) {
         webView.goBack()
     }
     
     @IBAction func menuButton(_ sender: UIButton) {
-        showMenu()
+        showSlideMenu()
     }
     
     @IBAction func catalogActionButton(_ sender: UIButton) {
@@ -80,14 +73,79 @@ class WebViewController: UIViewController {
         SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView)
     }
     
-    func showMenu() {
+
+    
+    
+    //MARK: -SlideMenu IBActions
+    @IBAction func listActionButton(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Anew", webView: webView)
+        case 2:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/cosmetics", webView: webView)
+        case 3:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/perfumery", webView: webView)
+        case 4:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/clothes-and-accessories", webView: webView)
+        case 5:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/health", webView: webView)
+        case 6:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/everything-for-home", webView: webView)
+        case 7:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/goods-for-kids", webView: webView)
+        case 8:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-men", webView: webView)
+        case 9:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-business", webView: webView)
+        case 10:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Apromo", webView: webView)
+        case 11:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/", webView: webView)
+            showSlideMenu()
+        default:
+            break
+        }
+        
+    }
+    
+    //MARK: -UITapGestureRecognizer
+    @IBAction func productLabelGestureOnTap(_ sender: UITapGestureRecognizer) {
+        animateMenu()
+    }
+    @IBAction func tapOnLogoGest(_ sender: UITapGestureRecognizer) {
+        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
+        if !isMenuShowing {
+            showSlideMenu()
+        }
+    }
+    
+ 
+    //MARK: -Methods
+    func animateMenu() {
+        isOpen.toggle()
+               if !isOpen {
+                   mainToProductConstraint.constant = 8
+                   listStackView.isUserInteractionEnabled = false
+                   openListButton.setTitle("▷", for: .normal)
+               } else {
+                   mainToProductConstraint.constant = 406
+                   listStackView.isUserInteractionEnabled = true
+                   openListButton.setTitle("▽", for: .normal)
+               }
+               UIView.animate(withDuration: 1) {
+                   self.view.layoutIfNeeded()
+                   self.listStackView.alpha = self.isOpen ? 1 : 0
+               }
+    }
+    
+    func showSlideMenu() {
         if isMenuShowing {
             sideBarLeadingConstraint.constant = 0
         } else {
             sideBarLeadingConstraint.constant = -230
         }
-        isMenuShowing = !isMenuShowing
-        self.slideView.isHidden = isMenuShowing
+        isMenuShowing.toggle()
+        slideView.isUserInteractionEnabled = !isMenuShowing
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
             
@@ -182,8 +240,14 @@ extension WebViewController: UIScrollViewDelegate {
        }
 }
 
-extension Notification.Name {
-    static let onSelectedSkin = Notification.Name("on-selected-skin")
+extension WebViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?searchword=\(text)&ordering=&searchphrase=all&option=com_search&lang=ru", webView: webView)
+        showSlideMenu()
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+    }
 }
 
 
