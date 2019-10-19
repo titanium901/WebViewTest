@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-//Работа со скролом, анимируем и скрываем лого
+// Работа со скролом, анимируем и скрываем лого
 extension WebViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
           lastContentOffset = scrollView.contentOffset.y

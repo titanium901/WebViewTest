@@ -11,7 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController {
 
-    //MARK: -IBOutlet
+    // MARK: -IBOutlet
     @IBOutlet weak var listStackView: UIStackView!
     @IBOutlet weak var mainToProductConstraint: NSLayoutConstraint!
     @IBOutlet weak var openListButton: UIButton!
@@ -24,7 +24,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var slideView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    //MARK: -Properties
+    // MARK: -Properties
     private var website = "https://new.faberlic.com/ru/"
     var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
@@ -35,14 +35,14 @@ class WebViewController: UIViewController {
         }
     }
     
-    //MARK: -VieDidLoad
+    // MARK: -VieDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         showSlideMenu()
     }
     
-    //MARK: -IBActions
+    // MARK: -IBActions
     @IBAction func openListButtonAction(_ sender: UIButton) {
        animateMenu()
     }
@@ -71,7 +71,7 @@ class WebViewController: UIViewController {
     
     
     
-    //MARK: -SlideMenu IBActions
+    // MARK: -SlideMenu IBActions
     @IBAction func listActionButton(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -103,7 +103,7 @@ class WebViewController: UIViewController {
         
     }
     
-    //MARK: -UITapGestureRecognizer
+    // MARK: -UITapGestureRecognizer
     @IBAction func productLabelGestureOnTap(_ sender: UITapGestureRecognizer) {
         animateMenu()
     }
@@ -115,8 +115,8 @@ class WebViewController: UIViewController {
     }
     
  
-    //MARK: -Methods
-    //анимация списка внутри sideMenu
+    // MARK: -Methods
+    // Анимация списка внутри sideMenu
     func animateMenu() {
         isOpen.toggle()
                if !isOpen {
@@ -134,7 +134,7 @@ class WebViewController: UIViewController {
                }
     }
     
-    //показать/убрать slide menu
+    // Показать/убрать slide menu
     func showSlideMenu() {
         
         sideBarLeadingConstraint.constant = isMenuShowing ? 0 : -230
@@ -147,7 +147,7 @@ class WebViewController: UIViewController {
       
     }
     
-    //первичные настройки
+    // Первичные настройки
     func setupUI() {
         backButton.isHidden = true
         webView.scrollView.showsVerticalScrollIndicator = false
@@ -172,8 +172,6 @@ class WebViewController: UIViewController {
 }
 
 extension UserDefaults {
-    // check for is first launch - only true on first invocation after app install, false on all further invocations
-    // Note: Store this value in AppDelegate if you have multiple places where you are checking for this flag
     static func isFirstLaunch() -> Bool {
         let hasBeenLaunchedBeforeFlag = "hasBeenLaunchedBeforeFlag"
         let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)

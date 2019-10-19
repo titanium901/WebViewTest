@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-//Работа с webView
+// Работа с webView
 extension WebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -34,7 +34,7 @@ extension WebViewController: WKNavigationDelegate {
         }
     }
     
-    //удаляем хедер и всплывающий элемент используя document.getElementsByClassName
+    // Удаляем хедер и всплывающий элемент используя document.getElementsByClassName
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print(#function)
         let elementClassName = ["onboarding-trigger js-onboarding-trigger d-flex j-content-center a-items-center", "layout-header js-layout-header fixed-top ", "header row", "stub__logo", "city-default__confirm btn fs-14 js-popover-close", "container", "menu"]

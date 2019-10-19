@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-//работа с поиском
+// Работа с поиском
 extension WebViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }

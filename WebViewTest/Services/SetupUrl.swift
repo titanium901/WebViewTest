@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-//Синглтон для загрузки разных url 
+// Синглтон для загрузки разных url
 class SetupUrl {
     
     static let shared = SetupUrl()
