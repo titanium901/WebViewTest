@@ -17,6 +17,7 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
                                 <rect key="frame" x="0.0" y="149" width="414" height="747"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -98,7 +99,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JcH-Ok-G0r" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="top" constant="15" id="kvj-wN-7d7"/>
                                     <constraint firstAttribute="trailing" secondItem="JcH-Ok-G0r" secondAttribute="trailing" constant="20" id="lre-o6-1xW"/>
@@ -270,7 +271,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Su-hn-I1m"/>
                             <constraint firstAttribute="bottom" secondItem="wKy-MQ-hbv" secondAttribute="bottom" id="1eE-aD-aGZ"/>
