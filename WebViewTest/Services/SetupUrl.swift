@@ -14,10 +14,12 @@ class SetupUrl {
     
     static let shared = SetupUrl()
     
-    func setupUrl(stringUrl: String, webView: WKWebView) {
+    func setupUrl(stringUrl: String, webView: WKWebView, completionHandler: ((Bool) -> ())? = nil) {
+        print(#function)
         if let url = URL(string: stringUrl) {
             webView.load(URLRequest(url: url))
-        }
+            completionHandler?(true)
+                    }
     }
 }
 

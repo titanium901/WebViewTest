@@ -29,6 +29,11 @@ class WebViewController: UIViewController {
     var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
     var isOpen = true
+    var reload = 0 {
+        didSet {
+            webView.reload()
+        }
+    }
     
     //MARK: -VieDidLoad
     override func viewDidLoad() {
@@ -51,46 +56,46 @@ class WebViewController: UIViewController {
     }
     
     @IBAction func catalogActionButton(_ sender: UIButton) {
-        SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/catalog/flash", webView: webView)
+        SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/catalog/flash", webView: webView, completionHandler: nil)
     }
     
     @IBAction func bagActionButton(_ sender: UIButton) {
-        SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/cart", webView: webView)
+        SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/cart", webView: webView, completionHandler: nil)
     }
     
     @IBAction func registerActionButton(_ sender: UIButton) {
-//        refreshWebView()
-        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView)
+        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView) { finish in
+        }
+        
     }
     
-
     
     
     //MARK: -SlideMenu IBActions
     @IBAction func listActionButton(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Anew", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Anew", webView: webView, completionHandler: nil)
         case 2:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/cosmetics", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/cosmetics", webView: webView, completionHandler: nil)
         case 3:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/perfumery", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/perfumery", webView: webView, completionHandler: nil)
         case 4:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/clothes-and-accessories", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/clothes-and-accessories", webView: webView, completionHandler: nil)
         case 5:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/health", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/health", webView: webView, completionHandler: nil)
         case 6:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/everything-for-home", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/everything-for-home", webView: webView, completionHandler: nil)
         case 7:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/goods-for-kids", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/goods-for-kids", webView: webView, completionHandler: nil)
         case 8:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-men", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-men", webView: webView, completionHandler: nil)
         case 9:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-business", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/for-business", webView: webView, completionHandler: nil)
         case 10:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Apromo", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Apromo", webView: webView, completionHandler: nil)
         case 11:
-            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/", webView: webView)
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/", webView: webView, completionHandler: nil)
             showSlideMenu()
         default:
             break
@@ -103,7 +108,7 @@ class WebViewController: UIViewController {
         animateMenu()
     }
     @IBAction func tapOnLogoGest(_ sender: UITapGestureRecognizer) {
-        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
+        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView, completionHandler: nil)
         if !isMenuShowing {
             showSlideMenu()
         }
@@ -151,7 +156,7 @@ class WebViewController: UIViewController {
         webView.alpha = 0
         webView.scrollView.delegate = self
         searchBar.delegate = self
-        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
+        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView, completionHandler: nil)
     }
     
     func refreshWebView() {
@@ -161,6 +166,7 @@ class WebViewController: UIViewController {
             webView.reload()
         } else {
             print("second launch")
+            
         }
     }
 }
@@ -177,6 +183,7 @@ extension UserDefaults {
         }
         return isFirstLaunch
     }
+    
 }
 
 
