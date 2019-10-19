@@ -9,10 +9,6 @@
 import UIKit
 import WebKit
 
-protocol WebViewControllerDelegate {
-    func toggleMenu()
-}
-
 class WebViewController: UIViewController {
 
     //MARK: -IBOutlet
@@ -29,10 +25,8 @@ class WebViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: -Properties
-    private var lastContentOffset: CGFloat = 10
     private var website = "https://new.faberlic.com/"
-    var delegate: WebViewControllerDelegate?
-    
+    var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
     var isOpen = true
     
@@ -40,16 +34,10 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
-        webView.scrollView.delegate = self
-        searchBar.delegate = self
         showSlideMenu()
-
-        
     }
     
     //MARK: -IBActions
-    
     @IBAction func openListButtonAction(_ sender: UIButton) {
        animateMenu()
     }
@@ -121,6 +109,7 @@ class WebViewController: UIViewController {
     
  
     //MARK: -Methods
+    //анимация списка внутри sideMenu
     func animateMenu() {
         isOpen.toggle()
                if !isOpen {
@@ -138,116 +127,29 @@ class WebViewController: UIViewController {
                }
     }
     
+    //показать/убрать slide menu
     func showSlideMenu() {
-        if isMenuShowing {
-            sideBarLeadingConstraint.constant = 0
-        } else {
-            sideBarLeadingConstraint.constant = -230
-        }
+        
+        sideBarLeadingConstraint.constant = isMenuShowing ? 0 : -230
         isMenuShowing.toggle()
         slideView.isUserInteractionEnabled = !isMenuShowing
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
-            
         }
     }
     
+    //первичные настройки
     func setupUI() {
         backButton.isHidden = true
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.navigationDelegate = self
         webView.alpha = 0
-    }
-    
-    func setupUrl(stringUrl: String) {
-        if let url = URL(string: stringUrl) {
-            webView.load(URLRequest(url: url))
-        }
-    }
-    
-}
-
-extension WebViewController: WKUIDelegate {
-
-}
-
-extension WebViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
-        self.webView.alpha = 0
-    }
-    
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        if self.webView.canGoBack {
-            UIView.animate(withDuration: 0.5) {
-                self.backButton.alpha = 1
-                self.backButton.isEnabled = true
-                self.backButton.isHidden = false
-            }
-        } else {
-            UIView.animate(withDuration: 0.5) {
-                self.backButton.alpha = 0
-                self.backButton.isEnabled = false
-                self.backButton.isHidden = true
-            }
-        }
-    }
-    
-    //удаляем хедер и всплывающий элемент используя document.getElementsByClassName
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-        let elementClassName = ["onboarding-trigger js-onboarding-trigger d-flex j-content-center a-items-center", "layout-header js-layout-header fixed-top ", "header row", "stub__logo"]
-        
-        for className in elementClassName {
-            let removeElementClassScript = "var element = document.getElementsByClassName('\(className)') [0]; element.parentNode.removeChild(element);"
-            webView.evaluateJavaScript(removeElementClassScript) { (response, error) in
-                debugPrint("Am here")
-            }
-        }
-        
-        UIView.animate(withDuration: 0.4) { [weak self] in
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
-            self?.webView.alpha = 1
-        }
-        
-        
-        
-    }
-    
-}
-
-extension WebViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-          lastContentOffset = scrollView.contentOffset.y
-       }
-
-       func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if lastContentOffset > scrollView.contentOffset.y {
-               UIView.animate(withDuration: 0.25, animations: { [weak self] in
-                   self?.logoImage.alpha = 1.0
-                   self?.logoImage.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-               }, completion: nil)
-           } else if lastContentOffset < scrollView.contentOffset.y {
-               UIView.animate(withDuration: 0.25, animations: { [weak self] in
-                   self?.logoImage.alpha = 0
-                   self?.logoImage.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-               }, completion: nil)
-           }
-       }
-}
-
-extension WebViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text else { return }
-        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?searchword=\(text)&ordering=&searchphrase=all&option=com_search&lang=ru", webView: webView)
-        showSlideMenu()
-        searchBar.text = nil
-        searchBar.resignFirstResponder()
+        webView.scrollView.delegate = self
+        searchBar.delegate = self
+        SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
     }
 }
+
 
 

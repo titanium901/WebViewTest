@@ -14,6 +14,9 @@
 		CA535ABF2359A9500005C577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA535ABE2359A9500005C577 /* Assets.xcassets */; };
 		CA535AC22359A9500005C577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA535AC02359A9500005C577 /* LaunchScreen.storyboard */; };
 		CA535AD2235A10AA0005C577 /* SetupUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AD1235A10AA0005C577 /* SetupUrl.swift */; };
+		CA535AD5235B23F20005C577 /* WebViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AD4235B23F20005C577 /* WebViewController+WKNavigationDelegate.swift */; };
+		CA535AD8235B24A50005C577 /* WebViewController+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AD7235B24A50005C577 /* WebViewController+UIScrollViewDelegate.swift */; };
+		CA535ADA235B24FF0005C577 /* WebViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AD9235B24FF0005C577 /* WebViewController+UISearchBarDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		CA535AC12359A9500005C577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA535AC32359A9500005C577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA535AD1235A10AA0005C577 /* SetupUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupUrl.swift; sourceTree = "<group>"; };
+		CA535AD4235B23F20005C577 /* WebViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
+		CA535AD7235B24A50005C577 /* WebViewController+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		CA535AD9235B24FF0005C577 /* WebViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CA535AB92359A94F0005C577 /* WebViewController.swift */,
+				CA535AD6235B24840005C577 /* Extension */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +115,16 @@
 				CA535AD1235A10AA0005C577 /* SetupUrl.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CA535AD6235B24840005C577 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CA535AD4235B23F20005C577 /* WebViewController+WKNavigationDelegate.swift */,
+				CA535AD7235B24A50005C577 /* WebViewController+UIScrollViewDelegate.swift */,
+				CA535AD9235B24FF0005C577 /* WebViewController+UISearchBarDelegate.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA535AD8235B24A50005C577 /* WebViewController+UIScrollViewDelegate.swift in Sources */,
 				CA535ABA2359A94F0005C577 /* WebViewController.swift in Sources */,
 				CA535AD2235A10AA0005C577 /* SetupUrl.swift in Sources */,
+				CA535ADA235B24FF0005C577 /* WebViewController+UISearchBarDelegate.swift in Sources */,
 				CA535AB62359A94F0005C577 /* AppDelegate.swift in Sources */,
+				CA535AD5235B23F20005C577 /* WebViewController+WKNavigationDelegate.swift in Sources */,
 				CA535AB82359A94F0005C577 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
