@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500CA8A905DC29F4F98F34E6 /* Pods_WebViewTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4864B21B57E9B78FF2DBEA7 /* Pods_WebViewTest.framework */; };
 		CA535AB62359A94F0005C577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AB52359A94F0005C577 /* AppDelegate.swift */; };
 		CA535AB82359A94F0005C577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AB72359A94F0005C577 /* SceneDelegate.swift */; };
 		CA535ABA2359A94F0005C577 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA535AB92359A94F0005C577 /* WebViewController.swift */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7EA13AED9B12FC4F56FD6A33 /* Pods-WebViewTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewTest/Pods-WebViewTest.release.xcconfig"; sourceTree = "<group>"; };
+		84E010EB5FFE67B78CE5085A /* Pods-WebViewTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewTest/Pods-WebViewTest.debug.xcconfig"; sourceTree = "<group>"; };
+		B4864B21B57E9B78FF2DBEA7 /* Pods_WebViewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA535AB22359A94F0005C577 /* WebViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA535AB52359A94F0005C577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA535AB72359A94F0005C577 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500CA8A905DC29F4F98F34E6 /* Pods_WebViewTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64649E6CB4E8DF471714B81E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4864B21B57E9B78FF2DBEA7 /* Pods_WebViewTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8965B63DF0EA28AA1D8F049A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84E010EB5FFE67B78CE5085A /* Pods-WebViewTest.debug.xcconfig */,
+				7EA13AED9B12FC4F56FD6A33 /* Pods-WebViewTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CA535AA92359A94F0005C577 = {
 			isa = PBXGroup;
 			children = (
 				CA535AB42359A94F0005C577 /* WebViewTest */,
 				CA535AB32359A94F0005C577 /* Products */,
+				8965B63DF0EA28AA1D8F049A /* Pods */,
+				64649E6CB4E8DF471714B81E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA535AC62359A9500005C577 /* Build configuration list for PBXNativeTarget "WebViewTest" */;
 			buildPhases = (
+				682B9626694CC0CE69C688CE /* [CP] Check Pods Manifest.lock */,
 				CA535AAE2359A94F0005C577 /* Sources */,
 				CA535AAF2359A94F0005C577 /* Frameworks */,
 				CA535AB02359A94F0005C577 /* Resources */,
+				1A7D859C02D31EDCD5C4947A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +218,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A7D859C02D31EDCD5C4947A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WebViewTest/Pods-WebViewTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebViewTest/Pods-WebViewTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682B9626694CC0CE69C688CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebViewTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA535AAE2359A94F0005C577 /* Sources */ = {
@@ -346,6 +411,7 @@
 		};
 		CA535AC72359A9500005C577 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E010EB5FFE67B78CE5085A /* Pods-WebViewTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +430,7 @@
 		};
 		CA535AC82359A9500005C577 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EA13AED9B12FC4F56FD6A33 /* Pods-WebViewTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

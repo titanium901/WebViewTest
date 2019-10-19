@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftSoup
 
 class WebViewController: UIViewController {
 
@@ -63,10 +64,37 @@ class WebViewController: UIViewController {
         SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/cart", webView: webView, completionHandler: nil)
     }
     
+    // Попробывал распарсить сайт и удалить лишнее через swiftSoup
     @IBAction func registerActionButton(_ sender: UIButton) {
-        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView) { finish in
-        }
+//        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView) { finish in
+//        }
         
+        let myURLAdress = "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru"
+        guard let myURL = URL(string: myURLAdress) else { return }
+        
+        let URLTask = URLSession.shared.dataTask(with: myURL) { myData, response, error in
+            
+            guard error == nil else { return }
+            guard let data = myData else { return }
+            let myHTMLString = String(data: data, encoding: String.Encoding.utf8)
+            
+            do {
+                var html = myHTMLString ?? ""
+                let doc: Document = try SwiftSoup.parse(html)
+                try doc.select("header").remove()
+                try html = doc.outerHtml()
+                DispatchQueue.main.async { [weak self] in
+                    self?.webView.loadHTMLString(html, baseURL: nil)
+                }
+                
+            } catch Exception.Error(let type, let message) {
+                print(type)
+                print(message)
+            } catch {
+                print("error")
+            }
+        }
+        URLTask.resume()
     }
     
     
