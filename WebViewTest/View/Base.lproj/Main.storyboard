@@ -38,7 +38,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
-                                <rect key="frame" x="7" y="60" width="43" height="25"/>
+                                <rect key="frame" x="12" y="60" width="43" height="25"/>
                                 <state key="normal" image="arrowBack"/>
                                 <connections>
                                     <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
@@ -47,40 +47,48 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLc-wz-wMq" userLabel="MenuBar">
                                 <rect key="frame" x="0.0" y="92" width="414" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="173" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-Ok-G0r">
-                                        <rect key="frame" x="8" y="8" width="398" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-Ok-G0r">
+                                        <rect key="frame" x="20" y="15" width="374" height="28.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrn-i1-AfY">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="28.5" height="28.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="GjV-hX-XX2"/>
-                                                    <constraint firstAttribute="width" constant="40" id="vbs-gT-j0D"/>
+                                                    <constraint firstAttribute="width" secondItem="Wrn-i1-AfY" secondAttribute="height" multiplier="1:1" id="8i4-sB-H9G"/>
                                                 </constraints>
-                                                <state key="normal" image="burgerIcon"/>
+                                                <state key="normal" image="burgerI"/>
                                                 <connections>
                                                     <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="36q-PW-42j"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1x1-ip-a9W">
-                                                <rect key="frame" x="213" y="0.0" width="185" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-pa-IgJ">
+                                                <rect key="frame" x="228.5" y="0.0" width="145.5" height="28.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqb-at-BeQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="50"/>
-                                                        <state key="normal" image="bookIcon"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="28.5" height="28.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Oqb-at-BeQ" secondAttribute="height" multiplier="1:1" id="weP-KO-LIB"/>
+                                                        </constraints>
+                                                        <state key="normal" image="openBookI"/>
                                                         <connections>
                                                             <action selector="catalogActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAW-ya-QfP"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2G7-7H-GV1">
-                                                        <rect key="frame" x="68.5" y="0.0" width="48" height="50"/>
-                                                        <state key="normal" image="bagIcon"/>
+                                                        <rect key="frame" x="58.5" y="0.0" width="28.5" height="28.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="2G7-7H-GV1" secondAttribute="height" multiplier="1:1" id="fb5-zu-ItA"/>
+                                                        </constraints>
+                                                        <state key="normal" image="bagI"/>
                                                         <connections>
                                                             <action selector="bagActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GL1-a5-Hbp"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-3n-TEV">
-                                                        <rect key="frame" x="136.5" y="0.0" width="48.5" height="50"/>
-                                                        <state key="normal" image="menIcon"/>
+                                                        <rect key="frame" x="117" y="0.0" width="28.5" height="28.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="c8L-3n-TEV" secondAttribute="height" multiplier="1:1" id="YBO-Ty-kO6"/>
+                                                        </constraints>
+                                                        <state key="normal" image="userI"/>
                                                         <connections>
                                                             <action selector="registerActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7qT-5C-fUa"/>
                                                         </connections>
@@ -92,10 +100,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="JcH-Ok-G0r" secondAttribute="trailing" constant="8" id="T2J-Ol-Uas"/>
+                                    <constraint firstItem="JcH-Ok-G0r" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="top" constant="15" id="kvj-wN-7d7"/>
+                                    <constraint firstAttribute="trailing" secondItem="JcH-Ok-G0r" secondAttribute="trailing" constant="20" id="lre-o6-1xW"/>
+                                    <constraint firstItem="JcH-Ok-G0r" firstAttribute="leading" secondItem="lLc-wz-wMq" secondAttribute="leading" constant="20" id="mzd-2P-FbZ"/>
                                     <constraint firstAttribute="height" constant="60" id="opB-dq-zkj"/>
-                                    <constraint firstItem="JcH-Ok-G0r" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="top" constant="8" id="rTB-6A-HHs"/>
-                                    <constraint firstItem="JcH-Ok-G0r" firstAttribute="leading" secondItem="lLc-wz-wMq" secondAttribute="leading" constant="8" id="z2u-gP-KOf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKy-MQ-hbv">
@@ -277,7 +285,7 @@
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="gts-O6-agM"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hEr-o6-u6N"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hX3-0f-Lxc"/>
-                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="j95-7U-d5N"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="j95-7U-d5N"/>
                             <constraint firstItem="wKy-MQ-hbv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wKW-9a-JYd"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wXi-sG-4KI"/>
                         </constraints>
@@ -315,10 +323,10 @@
     </scenes>
     <resources>
         <image name="arrowBack" width="43" height="25"/>
-        <image name="bagIcon" width="25" height="21"/>
-        <image name="bookIcon" width="35" height="23"/>
-        <image name="burgerIcon" width="28" height="19"/>
+        <image name="bagI" width="512" height="512"/>
+        <image name="burgerI" width="96" height="96"/>
         <image name="faberlicLogo" width="619" height="93"/>
-        <image name="menIcon" width="23" height="22"/>
+        <image name="openBookI" width="100" height="100"/>
+        <image name="userI" width="512" height="512"/>
     </resources>
 </document>

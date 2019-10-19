@@ -36,8 +36,8 @@ extension WebViewController: WKNavigationDelegate {
     
     //удаляем хедер и всплывающий элемент используя document.getElementsByClassName
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-        let elementClassName = ["onboarding-trigger js-onboarding-trigger d-flex j-content-center a-items-center", "layout-header js-layout-header fixed-top ", "header row", "stub__logo"]
+    
+        let elementClassName = ["onboarding-trigger js-onboarding-trigger d-flex j-content-center a-items-center", "layout-header js-layout-header fixed-top ", "header row", "stub__logo", "city-default__confirm btn fs-14 js-popover-close", "container"]
         
         for className in elementClassName {
             let removeElementClassScript = "var element = document.getElementsByClassName('\(className)') [0]; element.parentNode.removeChild(element);"
@@ -46,6 +46,7 @@ extension WebViewController: WKNavigationDelegate {
             }
         }
         
+        refreshWebView()
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.activityIndicator.stopAnimating()
             self?.activityIndicator.isHidden = true

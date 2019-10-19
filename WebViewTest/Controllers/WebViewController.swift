@@ -25,7 +25,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: -Properties
-    private var website = "https://new.faberlic.com/"
+    private var website = "https://new.faberlic.com/ru/"
     var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
     var isOpen = true
@@ -47,6 +47,7 @@ class WebViewController: UIViewController {
     
     @IBAction func menuButton(_ sender: UIButton) {
         showSlideMenu()
+        
     }
     
     @IBAction func catalogActionButton(_ sender: UIButton) {
@@ -58,6 +59,7 @@ class WebViewController: UIViewController {
     }
     
     @IBAction func registerActionButton(_ sender: UIButton) {
+//        refreshWebView()
         SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView)
     }
     
@@ -135,7 +137,9 @@ class WebViewController: UIViewController {
         slideView.isUserInteractionEnabled = !isMenuShowing
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
+            self.menuButton.transform = CGAffineTransform(rotationAngle: !self.isMenuShowing ? CGFloat(Double.pi/2) : CGFloat(Double.pi))
         }
+      
     }
     
     //первичные настройки
@@ -149,7 +153,30 @@ class WebViewController: UIViewController {
         searchBar.delegate = self
         SetupUrl.shared.setupUrl(stringUrl: website, webView: webView)
     }
+    
+    func refreshWebView() {
+        if UserDefaults.isFirstLaunch() {
+            print("is first launch")
+            webView.stopLoading()
+            webView.reload()
+        } else {
+            print("second launch")
+        }
+    }
 }
 
+extension UserDefaults {
+    // check for is first launch - only true on first invocation after app install, false on all further invocations
+    // Note: Store this value in AppDelegate if you have multiple places where you are checking for this flag
+    static func isFirstLaunch() -> Bool {
+        let hasBeenLaunchedBeforeFlag = "hasBeenLaunchedBeforeFlag"
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)
+        if (isFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: hasBeenLaunchedBeforeFlag)
+            UserDefaults.standard.synchronize()
+        }
+        return isFirstLaunch
+    }
+}
 
 
