@@ -19,7 +19,8 @@ class SetupUrl {
         if let url = URL(string: stringUrl) {
             webView.load(URLRequest(url: url))
             completionHandler?(true)
-                    }
+        }
+        
     }
 }
 

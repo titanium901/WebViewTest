@@ -17,7 +17,7 @@ extension WebViewController: UIScrollViewDelegate {
 
        func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !isMenuShowing {
-            showSlideMenu()
+            animateSlideMenu()
         }
         if lastContentOffset > scrollView.contentOffset.y {
                UIView.animate(withDuration: 0.25, animations: { [weak self] in

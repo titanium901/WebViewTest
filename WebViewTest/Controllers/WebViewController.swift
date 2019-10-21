@@ -30,17 +30,16 @@ class WebViewController: UIViewController {
     var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
     var isOpen = true
-    var reload = 0 {
-        didSet {
-            webView.reload()
-        }
-    }
+    private var trayOriginalCenter: CGPoint!
+    private var trayRight: CGPoint!
     
     // MARK: -VieDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        showSlideMenu()
+        animateSlideMenu()
+        trayRight = slideView.center
+        
     }
     
     // MARK: -IBActions
@@ -52,7 +51,7 @@ class WebViewController: UIViewController {
     }
     
     @IBAction func menuButton(_ sender: UIButton) {
-        showSlideMenu()
+        animateSlideMenu()
         
     }
     
@@ -66,35 +65,35 @@ class WebViewController: UIViewController {
     
     // Попробывал распарсить сайт и удалить лишнее через swiftSoup
     @IBAction func registerActionButton(_ sender: UIButton) {
-//        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView) { finish in
-//        }
-        
-        let myURLAdress = "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru"
-        guard let myURL = URL(string: myURLAdress) else { return }
-        
-        let URLTask = URLSession.shared.dataTask(with: myURL) { myData, response, error in
-            
-            guard error == nil else { return }
-            guard let data = myData else { return }
-            let myHTMLString = String(data: data, encoding: String.Encoding.utf8)
-            
-            do {
-                var html = myHTMLString ?? ""
-                let doc: Document = try SwiftSoup.parse(html)
-                try doc.select("header").remove()
-                try html = doc.outerHtml()
-                DispatchQueue.main.async { [weak self] in
-                    self?.webView.loadHTMLString(html, baseURL: nil)
-                }
-                
-            } catch Exception.Error(let type, let message) {
-                print(type)
-                print(message)
-            } catch {
-                print("error")
-            }
+        SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru", webView: webView) { finish in
         }
-        URLTask.resume()
+        
+//        let myURLAdress = "https://faberlic.com/index.php?option=com_flform&idform=514&lang=ru"
+//        guard let myURL = URL(string: myURLAdress) else { return }
+//        
+//        let URLTask = URLSession.shared.dataTask(with: myURL) { myData, response, error in
+//            
+//            guard error == nil else { return }
+//            guard let data = myData else { return }
+//            let myHTMLString = String(data: data, encoding: String.Encoding.utf8)
+//            
+//            do {
+//                var html = myHTMLString ?? ""
+//                let doc: Document = try SwiftSoup.parse(html)
+//                try doc.select("header").remove()
+//                try html = doc.outerHtml()
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.webView.loadHTMLString(html, baseURL: nil)
+//                }
+//                
+//            } catch Exception.Error(let type, let message) {
+//                print(type)
+//                print(message)
+//            } catch {
+//                print("error")
+//            }
+//        }
+//        URLTask.resume()
     }
     
     
@@ -124,7 +123,7 @@ class WebViewController: UIViewController {
             SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Apromo", webView: webView, completionHandler: nil)
         case 11:
             SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/", webView: webView, completionHandler: nil)
-            showSlideMenu()
+            animateSlideMenu()
         default:
             break
         }
@@ -138,8 +137,38 @@ class WebViewController: UIViewController {
     @IBAction func tapOnLogoGest(_ sender: UITapGestureRecognizer) {
         SetupUrl.shared.setupUrl(stringUrl: website, webView: webView, completionHandler: nil)
         if !isMenuShowing {
-            showSlideMenu()
+            animateSlideMenu()
         }
+    }
+    
+    
+    
+    @IBAction func panGest(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+//        print("translation \(translation)")
+        print(slideView.center.x)
+        print(trayRight.x)
+        if sender.state == UIGestureRecognizer.State.began {
+            trayOriginalCenter = slideView.center
+        } else if sender.state == UIGestureRecognizer.State.changed {
+            if translation.x >= 0.0 {
+                slideView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y)
+            } else {
+                slideView.center = CGPoint(x: trayOriginalCenter.x + translation.x, y: trayOriginalCenter.y)
+            }
+//            print(translation.x)
+//            print(trayOriginalCenter.x)
+        } else if sender.state == UIGestureRecognizer.State.ended {
+            if slideView.center.x == -trayRight.x {
+                
+            } else {
+                animateSlideMenu()
+            }
+            
+            
+        }
+        
+
     }
     
  
@@ -163,7 +192,7 @@ class WebViewController: UIViewController {
     }
     
     // Показать/убрать slide menu
-    func showSlideMenu() {
+    func animateSlideMenu() {
         
         sideBarLeadingConstraint.constant = isMenuShowing ? 0 : -230
         isMenuShowing.toggle()
@@ -188,6 +217,7 @@ class WebViewController: UIViewController {
     }
     
     func refreshWebView() {
+        print(#function)
         if UserDefaults.isFirstLaunch() {
             print("is first launch")
             webView.stopLoading()
@@ -196,6 +226,7 @@ class WebViewController: UIViewController {
             print("second launch")
             
         }
+        
     }
 }
 

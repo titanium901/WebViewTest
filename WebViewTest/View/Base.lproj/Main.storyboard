@@ -16,8 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
-                                <rect key="frame" x="0.0" y="149" width="414" height="747"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="753"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -38,13 +39,6 @@
                                     <outletCollection property="gestureRecognizers" destination="b0Q-JI-cJP" appends="YES" id="zra-23-aQm"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
-                                <rect key="frame" x="12" y="60" width="43" height="25"/>
-                                <state key="normal" image="arrowBack"/>
-                                <connections>
-                                    <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLc-wz-wMq" userLabel="MenuBar">
                                 <rect key="frame" x="0.0" y="92" width="414" height="60"/>
                                 <subviews>
@@ -152,8 +146,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-nl-r2w">
-                                                <rect key="frame" x="0.0" y="40" width="67" height="30"/>
-                                                <state key="normal" title="Косетика">
+                                                <rect key="frame" x="0.0" y="40" width="78" height="30"/>
+                                                <state key="normal" title="Косметика">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
@@ -257,6 +251,7 @@
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hgI-4g-Wgd" secondAttribute="trailing" constant="48" id="70q-Hc-MVn"/>
                                     <constraint firstItem="uVG-Le-TGr" firstAttribute="top" secondItem="wKy-MQ-hbv" secondAttribute="top" id="H3l-sF-8iP"/>
@@ -271,7 +266,20 @@
                                     <constraint firstItem="892-64-05E" firstAttribute="top" secondItem="a71-Lv-MeS" secondAttribute="bottom" constant="406" id="sIt-IF-vdL"/>
                                     <constraint firstItem="892-64-05E" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" constant="8" id="zAs-n8-Eh6"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fMc-Xh-mTz" appends="YES" id="msw-ZY-r6Q"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
+                                <rect key="frame" x="20" y="52" width="28.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fxP-B5-XYw"/>
+                                </constraints>
+                                <state key="normal" image="arrowBack"/>
+                                <connections>
+                                    <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -282,13 +290,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLc-wz-wMq" secondAttribute="trailing" id="8qq-l2-JVv"/>
                             <constraint firstItem="wKy-MQ-hbv" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="bottom" id="BMc-ra-jgn"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="top" secondItem="uy8-oB-B8f" secondAttribute="bottom" id="CJn-i1-ry6"/>
-                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="NyY-vF-1vn"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="width" secondItem="Wrn-i1-AfY" secondAttribute="width" id="LM7-Su-f66"/>
                             <constraint firstAttribute="bottom" secondItem="i2S-nn-e2r" secondAttribute="bottom" id="W5c-8V-dxP"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="gAc-ju-U0M"/>
-                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="gts-O6-agM"/>
+                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="gts-O6-agM"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hEr-o6-u6N"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hX3-0f-Lxc"/>
-                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="j95-7U-d5N"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j95-7U-d5N"/>
+                            <constraint firstItem="aOd-MB-Y6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="mYh-F0-HfI"/>
                             <constraint firstItem="wKy-MQ-hbv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wKW-9a-JYd"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wXi-sG-4KI"/>
                         </constraints>
@@ -320,12 +329,17 @@
                         <action selector="tapOnLogoGest:" destination="BYZ-38-t0r" id="w7Q-XW-YkV"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="fMc-Xh-mTz">
+                    <connections>
+                        <action selector="panGest:" destination="BYZ-38-t0r" id="YEt-ig-qbI"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="-119.19642857142857"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowBack" width="43" height="25"/>
+        <image name="arrowBack" width="100" height="100"/>
         <image name="bagI" width="512" height="512"/>
         <image name="burgerI" width="96" height="96"/>
         <image name="faberlicLogo" width="619" height="93"/>

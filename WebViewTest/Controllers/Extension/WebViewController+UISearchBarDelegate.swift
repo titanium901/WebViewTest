@@ -14,7 +14,7 @@ extension WebViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?searchword=\(text)&ordering=&searchphrase=all&option=com_search&lang=ru", webView: webView, completionHandler: nil)
-        showSlideMenu()
+        animateSlideMenu()
         searchBar.text = nil
         searchBar.resignFirstResponder()
     }
