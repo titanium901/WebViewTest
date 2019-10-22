@@ -57,9 +57,15 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         animateSlideMenu()
-        trayRight = slideView.center
+        trayRight = scrollSlideView.center
         animateProductMenu()
         animateMainMenu()
+        
+        let scrollViewPanGesture = UIPanGestureRecognizer(target: self, action: #selector(onPan))
+        scrollViewPanGesture.delegate = self
+        scrollSlideView.addGestureRecognizer(scrollViewPanGesture)
+        trayOriginalCenter = scrollSlideView.center
+
         
     }
     
@@ -68,7 +74,6 @@ class WebViewController: UIViewController {
         animateProductMenu()
     }
     @IBAction func openMenuButtonAction(_ sender: UIButton) {
-        print("hide")
         animateMainMenu()
     }
 
@@ -175,9 +180,36 @@ class WebViewController: UIViewController {
         }
     }
     
+    @objc func onPan(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: view)
+        if sender.state == UIGestureRecognizer.State.began {
+            
+            trayRight = scrollSlideView.center
+        } else if sender.state == UIGestureRecognizer.State.changed {
+            if translation.x >= 0.0 {
+                scrollSlideView.center = CGPoint(x: trayRight.x, y: trayRight.y)
+            } else {
+                
+                scrollSlideView.center = CGPoint(x: trayRight.x + translation.x, y: trayRight.y)
+            }
+            
+        } else if sender.state == UIGestureRecognizer.State.ended {
+            
+            if scrollSlideView.center.x > trayRight.x - 30 {
+                
+            } else {
+                animateSlideMenu()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.scrollSlideView.center.x = self.trayOriginalCenter.x
+                }
+            }
+        }
+    }
+    
     
     @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
-        animateSlideMenu()
+//        animateSlideMenu()
     }
     
     
@@ -291,4 +323,9 @@ extension UserDefaults {
     
 }
 
+extension WebViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
 
