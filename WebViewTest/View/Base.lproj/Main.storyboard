@@ -112,8 +112,8 @@
                                     <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Uh-Hkc">
-                                <rect key="frame" x="0.0" y="148" width="226" height="748"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Uh-Hkc">
+                                <rect key="frame" x="0.0" y="148" width="264" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CY-GR-w4W">
                                         <rect key="frame" x="0.0" y="0.0" width="264" height="1852"/>
@@ -287,7 +287,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5q-KU-k4f">
                                                 <rect key="frame" x="30" y="552" width="234" height="550"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="szw-h3-uzI" userLabel="CompanyStackView">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="szw-h3-uzI" userLabel="CompanyStackView">
                                                         <rect key="frame" x="20" y="0.0" width="232.5" height="386"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="R1e-ZN-nMh">
@@ -547,7 +547,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="szw-h3-uzI" firstAttribute="top" secondItem="U5q-KU-k4f" secondAttribute="top" id="0lH-KM-g19"/>
                                                     <constraint firstAttribute="height" constant="550" id="6iH-kz-eZO"/>
+                                                    <constraint firstItem="szw-h3-uzI" firstAttribute="leading" secondItem="U5q-KU-k4f" secondAttribute="leading" constant="20" id="zAl-dh-cRj"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="QvU-2B-LtE">
@@ -574,7 +576,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SO-eI-FJ1">
                                                 <rect key="frame" x="30" y="1148" width="234" height="350"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="r06-vf-lvE" userLabel="ServicStackView">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="r06-vf-lvE" userLabel="ServicStackView">
                                                         <rect key="frame" x="20" y="0.0" width="260.5" height="340"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="be3-vF-gE7">
@@ -731,12 +733,14 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="350" id="MWv-dN-Rk2"/>
+                                                    <constraint firstItem="r06-vf-lvE" firstAttribute="top" secondItem="2SO-eI-FJ1" secondAttribute="top" id="QLS-MS-Tnf"/>
+                                                    <constraint firstItem="r06-vf-lvE" firstAttribute="leading" secondItem="2SO-eI-FJ1" secondAttribute="leading" constant="20" id="QqE-gi-gFK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kkn-4a-FZj">
                                                 <rect key="frame" x="42" y="1506" width="183" height="141"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-pG-g9i">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-pG-g9i">
                                                         <rect key="frame" x="14" y="-3" width="164" height="144"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Доставка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYa-86-kfc">
@@ -799,12 +803,14 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="141" id="mKV-6m-JWh"/>
+                                                    <constraint firstItem="yWd-pG-g9i" firstAttribute="top" secondItem="Kkn-4a-FZj" secondAttribute="top" constant="-3" id="qKb-kg-zcw"/>
+                                                    <constraint firstItem="yWd-pG-g9i" firstAttribute="leading" secondItem="Kkn-4a-FZj" secondAttribute="leading" constant="14" id="yij-PP-ZSt"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duK-KG-o6i">
                                                 <rect key="frame" x="20" y="1655" width="183" height="141"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-rQ-r37">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-rQ-r37">
                                                         <rect key="frame" x="14" y="-3" width="161" height="144"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-Rg-ha0">
@@ -851,7 +857,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="ftp-rQ-r37" firstAttribute="trailing" secondItem="duK-KG-o6i" secondAttribute="trailingMargin" id="89H-Em-aN5"/>
                                                     <constraint firstAttribute="height" constant="141" id="eXt-7j-z9j"/>
+                                                    <constraint firstItem="ftp-rQ-r37" firstAttribute="top" secondItem="duK-KG-o6i" secondAttribute="top" constant="-3" id="nsP-6M-7y8"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -895,6 +903,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="7CY-GR-w4W" firstAttribute="leading" secondItem="m33-Uh-Hkc" secondAttribute="leading" id="7L6-Cn-VuP"/>
+                                    <constraint firstAttribute="trailing" secondItem="7CY-GR-w4W" secondAttribute="trailing" constant="-38" id="YC6-o2-ALI"/>
                                     <constraint firstItem="7CY-GR-w4W" firstAttribute="top" secondItem="m33-Uh-Hkc" secondAttribute="top" id="i1t-Xv-3id"/>
                                     <constraint firstItem="I11-lv-Pq5" firstAttribute="trailing" secondItem="7CY-GR-w4W" secondAttribute="trailing" id="lwo-Qs-emi"/>
                                     <constraint firstAttribute="bottom" secondItem="7CY-GR-w4W" secondAttribute="bottom" id="u8W-vV-qQ9"/>
