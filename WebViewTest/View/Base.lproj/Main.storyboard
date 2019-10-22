@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WebViewController" customModule="WebViewTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
-                                <rect key="frame" x="0.0" y="148" width="414" height="1852"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="748"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
@@ -26,7 +26,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-Fv-qgg">
-                                <rect key="frame" x="188.5" y="981.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faberlicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-oB-B8f">
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Uh-Hkc">
-                                <rect key="frame" x="0.0" y="148" width="226" height="1852"/>
+                                <rect key="frame" x="0.0" y="148" width="226" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CY-GR-w4W">
                                         <rect key="frame" x="0.0" y="0.0" width="264" height="1852"/>
@@ -141,7 +141,7 @@
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="openProductButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhK-Ju-Is1"/>
+                                                            <action selector="openProductButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gQ-vf-aw7"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -257,7 +257,6 @@
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jcM-wH-A1U"/>
                                                             <action selector="openMenuButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL0-G3-Wx5"/>
                                                         </connections>
                                                     </button>
@@ -888,6 +887,9 @@
                                             <constraint firstItem="opc-oO-dYW" firstAttribute="top" secondItem="Plr-Ag-33e" secondAttribute="bottom" id="xEB-3G-sOv"/>
                                             <constraint firstAttribute="trailing" secondItem="Kkn-4a-FZj" secondAttribute="trailing" constant="39" id="xJI-FU-a2z"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="XjX-W3-NEc" appends="YES" id="Kp2-wB-3bM"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -899,9 +901,6 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="TkZ-bP-Uuw"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="I11-lv-Pq5"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fMc-Xh-mTz" appends="YES" id="xc9-tb-YHr"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -928,20 +927,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HRU-2Q-Ude"/>
-                    <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="activityIndicator" destination="R3Q-Fv-qgg" id="jGS-IS-jd7"/>
                         <outlet property="backButton" destination="aOd-MB-Y6B" id="HWA-XJ-RE4"/>
+                        <outlet property="brandView" destination="U5q-KU-k4f" id="laf-Zl-QCF"/>
+                        <outlet property="companyStackView" destination="Bwv-qb-n1d" id="iqe-gP-HHx"/>
+                        <outlet property="lastView" destination="duK-KG-o6i" id="dlF-Gi-Baw"/>
                         <outlet property="logoImage" destination="uy8-oB-B8f" id="4gE-7H-sig"/>
                         <outlet property="menuButton" destination="Wrn-i1-AfY" id="1SF-B6-xFx"/>
+                        <outlet property="openMenuButton" destination="7iN-Gw-wNF" id="owW-hi-mr9"/>
                         <outlet property="openProductButton" destination="twq-hC-IfB" id="7Hh-lc-oLW"/>
                         <outlet property="productHeightConst" destination="3uj-2e-rc4" id="ZHU-EX-Nm3"/>
                         <outlet property="productStackView" destination="vxg-vx-hhP" id="Iyo-PP-kUG"/>
                         <outlet property="scrollSlideView" destination="m33-Uh-Hkc" id="nNg-NS-I7v"/>
                         <outlet property="searchBar" destination="Plr-Ag-33e" id="1J6-ex-TKl"/>
+                        <outlet property="serviceView" destination="2SO-eI-FJ1" id="WtN-m6-J5r"/>
+                        <outlet property="servisStackView" destination="QvU-2B-LtE" id="njw-7g-uQU"/>
                         <outlet property="slideScrollViewLeadingConst" destination="7L6-Cn-VuP" id="uFV-yh-3Dt"/>
                         <outlet property="slideView" destination="7CY-GR-w4W" id="YwX-Sx-GyM"/>
+                        <outlet property="slideViewHeight" destination="EcF-pg-nsZ" id="X6c-FE-pii"/>
                         <outlet property="slideViewLeadingConst" destination="7L6-Cn-VuP" id="mqH-UT-N8r"/>
+                        <outlet property="underServiceView" destination="Kkn-4a-FZj" id="P1i-Cc-bcR"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
@@ -956,11 +962,11 @@
                         <action selector="tapOnLogoGest:" destination="BYZ-38-t0r" id="w7Q-XW-YkV"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="fMc-Xh-mTz">
+                <swipeGestureRecognizer direction="left" id="XjX-W3-NEc">
                     <connections>
-                        <action selector="panGest:" destination="BYZ-38-t0r" id="Run-rF-V96"/>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="C1O-7g-JVE"/>
                     </connections>
-                </panGestureRecognizer>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="950.72463768115949" y="-119.19642857142857"/>
         </scene>

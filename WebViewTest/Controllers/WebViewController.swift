@@ -14,9 +14,6 @@ class WebViewController: UIViewController {
 
     // MARK: -IBOutlet
     // ProductSlideMenu properties
-
-    
-    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIButton!
@@ -24,15 +21,26 @@ class WebViewController: UIViewController {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var openProductButton: UIButton!
     
+    @IBOutlet weak var openMenuButton: UIButton!
     @IBOutlet weak var slideScrollViewLeadingConst: NSLayoutConstraint!
     @IBOutlet weak var slideView: UIView!
     @IBOutlet weak var scrollSlideView: UIScrollView!
     @IBOutlet weak var slideViewLeadingConst: NSLayoutConstraint!
     
+  
+    @IBOutlet weak var slideViewHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var productStackView: UIStackView!
     @IBOutlet weak var productHeightConst: NSLayoutConstraint!
+    
+    @IBOutlet weak var companyStackView: UIStackView!
+    @IBOutlet weak var brandView: UIView!
+    @IBOutlet weak var servisStackView: UIStackView!
+    @IBOutlet weak var serviceView: UIView!
+    @IBOutlet weak var underServiceView: UIView!
+    @IBOutlet weak var lastView: UIView!
+    
     
     
     // MARK: -Properties
@@ -57,10 +65,11 @@ class WebViewController: UIViewController {
     
     // MARK: -IBActions
     @IBAction func openProductButtonAction(_ sender: UIButton) {
-       animateProductMenu()
+        animateProductMenu()
     }
     @IBAction func openMenuButtonAction(_ sender: UIButton) {
-       animateMainMenu()
+        print("hide")
+        animateMainMenu()
     }
 
     @IBAction func backAction(_ sender: UIButton) {
@@ -153,6 +162,7 @@ class WebViewController: UIViewController {
         }
         
     }
+
     
     // MARK: -UITapGestureRecognizer
     @IBAction func productLabelGestureOnTap(_ sender: UITapGestureRecognizer) {
@@ -166,34 +176,10 @@ class WebViewController: UIViewController {
     }
     
     
-    
-    @IBAction func panGest(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: view)
-//        print("translation \(translation)")
-        print(scrollSlideView.center.x)
-        print(trayRight.x)
-        if sender.state == UIGestureRecognizer.State.began {
-            trayOriginalCenter = scrollSlideView.center
-        } else if sender.state == UIGestureRecognizer.State.changed {
-            if translation.x >= 0.0 {
-                scrollSlideView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y)
-            } else {
-                scrollSlideView.center = CGPoint(x: trayOriginalCenter.x + translation.x, y: trayOriginalCenter.y)
-            }
-//            print(translation.x)
-//            print(trayOriginalCenter.x)
-        } else if sender.state == UIGestureRecognizer.State.ended {
-            if scrollSlideView.center.x == trayRight.x {
-                
-            } else {
-                animateSlideMenu()
-            }
-            
-            
-        }
-        
-
+    @IBAction func swipe(_ sender: UISwipeGestureRecognizer) {
+        animateSlideMenu()
     }
+    
     
  
     // MARK: -Methods
@@ -216,7 +202,36 @@ class WebViewController: UIViewController {
         isOpenProductMenu.toggle()
     }
     func animateMainMenu() {
+        if isOpenMainMenu {
+            openMenuButton.setTitle("▷", for: .normal)
+            companyStackView.isUserInteractionEnabled = false
+            brandView.isUserInteractionEnabled = false
+            servisStackView.isUserInteractionEnabled = false
+            serviceView.isUserInteractionEnabled = false
+            underServiceView.isUserInteractionEnabled = false
+            lastView.isUserInteractionEnabled = false
+        } else {
+            openMenuButton.setTitle("▽", for: .normal)
+            companyStackView.isUserInteractionEnabled = true
+            brandView.isUserInteractionEnabled = true
+            servisStackView.isUserInteractionEnabled = true
+            serviceView.isUserInteractionEnabled = true
+            underServiceView.isUserInteractionEnabled = true
+            lastView.isUserInteractionEnabled = true
+        }
         
+        UIView.animate(withDuration: 1) {
+            self.companyStackView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.brandView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.servisStackView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.serviceView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.underServiceView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.lastView.alpha = self.isOpenMainMenu ? 0 : 1
+            self.scrollSlideView.isScrollEnabled = !self.isOpenMainMenu ? true : false
+            
+        }
+        
+        isOpenMainMenu.toggle()
     }
     
     // Показать/убрать slide menu
