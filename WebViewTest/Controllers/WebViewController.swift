@@ -13,23 +13,34 @@ import SwiftSoup
 class WebViewController: UIViewController {
 
     // MARK: -IBOutlet
-    @IBOutlet weak var listStackView: UIStackView!
-    @IBOutlet weak var mainToProductConstraint: NSLayoutConstraint!
-    @IBOutlet weak var openListButton: UIButton!
+    // ProductSlideMenu properties
+
+    
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var sideBarLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var openProductButton: UIButton!
+    
+    @IBOutlet weak var slideScrollViewLeadingConst: NSLayoutConstraint!
     @IBOutlet weak var slideView: UIView!
+    @IBOutlet weak var scrollSlideView: UIScrollView!
+    @IBOutlet weak var slideViewLeadingConst: NSLayoutConstraint!
+    
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBOutlet weak var productStackView: UIStackView!
+    @IBOutlet weak var productHeightConst: NSLayoutConstraint!
+    
     
     // MARK: -Properties
     private var website = "https://new.faberlic.com/ru/"
     var lastContentOffset: CGFloat = 10
     var isMenuShowing = false
-    var isOpen = true
+    var isOpenProductMenu = true
+    var isOpenMainMenu = true
     private var trayOriginalCenter: CGPoint!
     private var trayRight: CGPoint!
     
@@ -39,13 +50,19 @@ class WebViewController: UIViewController {
         setupUI()
         animateSlideMenu()
         trayRight = slideView.center
+        animateProductMenu()
+        animateMainMenu()
         
     }
     
     // MARK: -IBActions
-    @IBAction func openListButtonAction(_ sender: UIButton) {
-       animateMenu()
+    @IBAction func openProductButtonAction(_ sender: UIButton) {
+       animateProductMenu()
     }
+    @IBAction func openMenuButtonAction(_ sender: UIButton) {
+       animateMainMenu()
+    }
+
     @IBAction func backAction(_ sender: UIButton) {
         webView.goBack()
     }
@@ -123,7 +140,14 @@ class WebViewController: UIViewController {
             SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/c/1?q=%3Arelevance%3Ashields%3Apromo", webView: webView, completionHandler: nil)
         case 11:
             SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/", webView: webView, completionHandler: nil)
-            animateSlideMenu()
+            case 12:
+            SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_content&view=category&layout=blog&id=379", webView: webView, completionHandler: nil)
+            case 13:
+            SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?option=com_list&view=list&listId=104", webView: webView, completionHandler: nil)
+            case 14:
+            SetupUrl.shared.setupUrl(stringUrl: "https://faberlic.com/index.php?Itemid=2356", webView: webView, completionHandler: nil)
+            case 15:
+            SetupUrl.shared.setupUrl(stringUrl: "https://new.faberlic.com/ru/catalog/flash", webView: webView, completionHandler: nil)
         default:
             break
         }
@@ -132,7 +156,7 @@ class WebViewController: UIViewController {
     
     // MARK: -UITapGestureRecognizer
     @IBAction func productLabelGestureOnTap(_ sender: UITapGestureRecognizer) {
-        animateMenu()
+        animateProductMenu()
     }
     @IBAction func tapOnLogoGest(_ sender: UITapGestureRecognizer) {
         SetupUrl.shared.setupUrl(stringUrl: website, webView: webView, completionHandler: nil)
@@ -146,20 +170,20 @@ class WebViewController: UIViewController {
     @IBAction func panGest(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
 //        print("translation \(translation)")
-        print(slideView.center.x)
+        print(scrollSlideView.center.x)
         print(trayRight.x)
         if sender.state == UIGestureRecognizer.State.began {
-            trayOriginalCenter = slideView.center
+            trayOriginalCenter = scrollSlideView.center
         } else if sender.state == UIGestureRecognizer.State.changed {
             if translation.x >= 0.0 {
-                slideView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y)
+                scrollSlideView.center = CGPoint(x: trayOriginalCenter.x, y: trayOriginalCenter.y)
             } else {
-                slideView.center = CGPoint(x: trayOriginalCenter.x + translation.x, y: trayOriginalCenter.y)
+                scrollSlideView.center = CGPoint(x: trayOriginalCenter.x + translation.x, y: trayOriginalCenter.y)
             }
 //            print(translation.x)
 //            print(trayOriginalCenter.x)
         } else if sender.state == UIGestureRecognizer.State.ended {
-            if slideView.center.x == -trayRight.x {
+            if scrollSlideView.center.x == trayRight.x {
                 
             } else {
                 animateSlideMenu()
@@ -174,33 +198,42 @@ class WebViewController: UIViewController {
  
     // MARK: -Methods
     // Анимация списка внутри sideMenu
-    func animateMenu() {
-        isOpen.toggle()
-               if !isOpen {
-                   mainToProductConstraint.constant = 8
-                   listStackView.isUserInteractionEnabled = false
-                   openListButton.setTitle("▷", for: .normal)
-               } else {
-                   mainToProductConstraint.constant = 406
-                   listStackView.isUserInteractionEnabled = true
-                   openListButton.setTitle("▽", for: .normal)
-               }
-               UIView.animate(withDuration: 1) {
-                   self.view.layoutIfNeeded()
-                   self.listStackView.alpha = self.isOpen ? 1 : 0
-               }
+    func animateProductMenu() {
+        if isOpenProductMenu {
+            productStackView.isUserInteractionEnabled = false
+            productHeightConst.constant = 8
+            openProductButton.setTitle("▷", for: .normal)
+        } else {
+            productStackView.isUserInteractionEnabled = true
+            productHeightConst.constant = 406
+            openProductButton.setTitle("▽", for: .normal)
+        }
+        
+        UIView.animate(withDuration: 1) {
+            self.view.layoutIfNeeded()
+            self.productStackView.alpha = self.isOpenProductMenu ? 0 : 1
+        }
+        isOpenProductMenu.toggle()
+    }
+    func animateMainMenu() {
+        
     }
     
     // Показать/убрать slide menu
     func animateSlideMenu() {
+        print(slideScrollViewLeadingConst.constant)
+        slideScrollViewLeadingConst.constant = isMenuShowing ? 0 : -300
+        slideViewLeadingConst.constant = isMenuShowing ? 0 : -300
         
-        sideBarLeadingConstraint.constant = isMenuShowing ? 0 : -230
         isMenuShowing.toggle()
-        slideView.isUserInteractionEnabled = !isMenuShowing
+        scrollSlideView.isUserInteractionEnabled = !isMenuShowing
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
             self.menuButton.transform = CGAffineTransform(rotationAngle: !self.isMenuShowing ? CGFloat(Double.pi/2) : CGFloat(Double.pi))
+            self.slideView.alpha = self.isMenuShowing ? 0 : 1
+            self.scrollSlideView.alpha = self.isMenuShowing ? 0 : 1
         }
+        
       
     }
     

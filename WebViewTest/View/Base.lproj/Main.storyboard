@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WebViewController" customModule="WebViewTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-nn-e2r">
-                                <rect key="frame" x="0.0" y="143" width="414" height="753"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="1852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
@@ -25,7 +26,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-Fv-qgg">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="981.5" width="37" height="37"/>
                                 <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faberlicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uy8-oB-B8f">
@@ -101,175 +102,6 @@
                                     <constraint firstAttribute="height" constant="60" id="opB-dq-zkj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKy-MQ-hbv">
-                                <rect key="frame" x="0.0" y="152" width="230" height="744"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="uVG-Le-TGr">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="a71-Lv-MeS">
-                                        <rect key="frame" x="8" y="56" width="213.5" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-CJ-a5c">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
-                                                <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="eHG-XF-Inz" appends="YES" id="4w0-x3-IDU"/>
-                                                </connections>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW7-vC-8oS">
-                                                <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="▽">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openListButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuf-G8-vvF"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hgI-4g-Wgd">
-                                        <rect key="frame" x="21" y="94" width="161" height="390"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHw-kc-tU4">
-                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
-                                                <state key="normal" title="Новинки">
-                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZbX-Yp-hWP"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5x-nl-r2w">
-                                                <rect key="frame" x="0.0" y="40" width="78" height="30"/>
-                                                <state key="normal" title="Косметика">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0h-Vo-QgS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llv-iW-Kmn">
-                                                <rect key="frame" x="0.0" y="80" width="96" height="30"/>
-                                                <state key="normal" title="Парфюмерия">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZRY-oY-bC9"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-fW-t8v">
-                                                <rect key="frame" x="0.0" y="120" width="161" height="30"/>
-                                                <state key="normal" title="Одежда и Аксессуары">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6VT-pp-4M9"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avw-1Z-GLi">
-                                                <rect key="frame" x="0.0" y="160" width="69" height="30"/>
-                                                <state key="normal" title="Здоровье">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3L-ls-XTq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em3-rm-5jM">
-                                                <rect key="frame" x="0.0" y="200" width="31" height="30"/>
-                                                <state key="normal" title="Дом">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9pe-v0-hxw"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cin-uF-gFd">
-                                                <rect key="frame" x="0.0" y="240" width="45" height="30"/>
-                                                <state key="normal" title="Детям">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKG-fE-kFA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-tr-v4b">
-                                                <rect key="frame" x="0.0" y="280" width="78" height="30"/>
-                                                <state key="normal" title="Мужчинам">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0wg-Dr-wBh"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-Te-a5G">
-                                                <rect key="frame" x="0.0" y="320" width="91" height="30"/>
-                                                <state key="normal" title="Для Бизнеса">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIv-ck-gKf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-1M-OE4">
-                                                <rect key="frame" x="0.0" y="360" width="45" height="30"/>
-                                                <state key="normal" title="Акции">
-                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSR-Gp-JE6"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="892-64-05E">
-                                        <rect key="frame" x="8" y="492" width="213.5" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Главное Меню" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTJ-vm-k9j">
-                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lr-xh-Qd9">
-                                                <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="▷">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvc-cM-SI8"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hgI-4g-Wgd" secondAttribute="trailing" constant="48" id="70q-Hc-MVn"/>
-                                    <constraint firstItem="uVG-Le-TGr" firstAttribute="top" secondItem="wKy-MQ-hbv" secondAttribute="top" id="H3l-sF-8iP"/>
-                                    <constraint firstItem="892-64-05E" firstAttribute="width" secondItem="a71-Lv-MeS" secondAttribute="width" id="Jmv-AJ-dkX"/>
-                                    <constraint firstItem="a71-Lv-MeS" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" constant="8" id="WtB-hd-3QZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="uVG-Le-TGr" secondAttribute="trailing" id="Zbt-Aa-c9Y"/>
-                                    <constraint firstItem="uVG-Le-TGr" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" id="agV-AO-GGq"/>
-                                    <constraint firstItem="hgI-4g-Wgd" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" constant="21" id="eD8-Zf-ed8"/>
-                                    <constraint firstItem="hgI-4g-Wgd" firstAttribute="top" secondItem="a71-Lv-MeS" secondAttribute="bottom" constant="8" id="oQy-iu-Q94"/>
-                                    <constraint firstItem="a71-Lv-MeS" firstAttribute="top" secondItem="uVG-Le-TGr" secondAttribute="bottom" id="otb-fc-VD0"/>
-                                    <constraint firstAttribute="width" constant="230" id="ru4-Hb-6GU"/>
-                                    <constraint firstItem="892-64-05E" firstAttribute="top" secondItem="a71-Lv-MeS" secondAttribute="bottom" constant="406" id="sIt-IF-vdL"/>
-                                    <constraint firstItem="892-64-05E" firstAttribute="leading" secondItem="wKy-MQ-hbv" secondAttribute="leading" constant="8" id="zAs-n8-Eh6"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fMc-Xh-mTz" appends="YES" id="msw-ZY-r6Q"/>
-                                </connections>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOd-MB-Y6B">
                                 <rect key="frame" x="20" y="52" width="28.5" height="40"/>
                                 <constraints>
@@ -280,41 +112,836 @@
                                     <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8Q-St-mVD"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m33-Uh-Hkc">
+                                <rect key="frame" x="0.0" y="148" width="226" height="1852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CY-GR-w4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="1852"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Plr-Ag-33e">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="jls-co-m0t"/>
+                                                </constraints>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="opc-oO-dYW">
+                                                <rect key="frame" x="8" y="40" width="213.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продукция" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-76-Z9X">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
+                                                        <gestureRecognizers/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twq-hC-IfB">
+                                                        <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="▽">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="openProductButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xhK-Ju-Is1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vxg-vx-hhP">
+                                                <rect key="frame" x="21" y="78" width="195" height="390"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOW-y3-Eel">
+                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
+                                                        <state key="normal" title="Новинки">
+                                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qi6-5i-qlh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsS-MN-z3L">
+                                                        <rect key="frame" x="0.0" y="40" width="78" height="30"/>
+                                                        <state key="normal" title="Косметика">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rfy-pa-2DF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP7-Pa-TOA">
+                                                        <rect key="frame" x="0.0" y="80" width="96" height="30"/>
+                                                        <state key="normal" title="Парфюмерия">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R71-BS-Pdv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQV-ST-WrK">
+                                                        <rect key="frame" x="0.0" y="120" width="161" height="30"/>
+                                                        <state key="normal" title="Одежда и Аксессуары">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NO6-F7-7uQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIq-ix-dcd">
+                                                        <rect key="frame" x="0.0" y="160" width="69" height="30"/>
+                                                        <state key="normal" title="Здоровье">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="49T-oc-QmY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msu-pN-BCd">
+                                                        <rect key="frame" x="0.0" y="200" width="31" height="30"/>
+                                                        <state key="normal" title="Дом">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZUd-13-WLA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-lH-t3Q">
+                                                        <rect key="frame" x="0.0" y="240" width="45" height="30"/>
+                                                        <state key="normal" title="Детям">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3hD-pJ-ePe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-wA-ISW">
+                                                        <rect key="frame" x="0.0" y="280" width="78" height="30"/>
+                                                        <state key="normal" title="Мужчинам">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="125-DV-VvW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miy-O3-8Zi">
+                                                        <rect key="frame" x="0.0" y="320" width="91" height="30"/>
+                                                        <state key="normal" title="Для Бизнеса">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gNc-AY-UUA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8d-je-D7c">
+                                                        <rect key="frame" x="0.0" y="360" width="45" height="30"/>
+                                                        <state key="normal" title="Акции">
+                                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O12-KJ-95w"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-iH-TUK">
+                                                <rect key="frame" x="8" y="476" width="213.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Главное Меню" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-l6-yK5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iN-Gw-wNF">
+                                                        <rect key="frame" x="183.5" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="▷">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jcM-wH-A1U"/>
+                                                            <action selector="openMenuButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL0-G3-Wx5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="Bwv-qb-n1d">
+                                                <rect key="frame" x="20" y="514" width="164.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Компания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-XZ-4o2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjN-Nt-XOM">
+                                                        <rect key="frame" x="134.5" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="▷">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OnQ-Yq-VLa"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5q-KU-k4f">
+                                                <rect key="frame" x="30" y="552" width="234" height="550"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="szw-h3-uzI" userLabel="CompanyStackView">
+                                                        <rect key="frame" x="20" y="0.0" width="232.5" height="386"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="R1e-ZN-nMh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="О Бренде" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7a-YE-dUk">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="68.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-is-XMB">
+                                                                        <rect key="frame" x="149.5" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ne-iN-gRy"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtV-aX-mR1">
+                                                                <rect key="frame" x="0.0" y="38" width="100" height="60"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="c3P-2c-rKD">
+                                                                        <rect key="frame" x="20" y="0.0" width="92" height="64"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="История" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEj-KV-sqX">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Наши награды" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-Nv-ODl">
+                                                                                <rect key="frame" x="0.0" y="24" width="92" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Пресса о нас" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJC-hM-vgz">
+                                                                                <rect key="frame" x="0.0" y="48" width="84.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="c3P-2c-rKD" firstAttribute="leading" secondItem="BtV-aX-mR1" secondAttribute="leading" constant="20" id="8uv-or-pCd"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="SZB-Sv-INy"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="mnQ-ma-vmm"/>
+                                                                    <constraint firstItem="c3P-2c-rKD" firstAttribute="top" secondItem="BtV-aX-mR1" secondAttribute="top" id="wKJ-uc-Kot"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pBb-BM-zVI">
+                                                                <rect key="frame" x="0.0" y="106" width="191" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Научные Разработки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-Gf-d3E">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgu-rK-P0v">
+                                                                        <rect key="frame" x="161" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu4-o4-6kO"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="MTw-83-StB">
+                                                                <rect key="frame" x="0.0" y="144" width="232.5" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Собственное Производство" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-fl-2GQ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="201.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2W-gO-fkN">
+                                                                        <rect key="frame" x="202.5" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Pz-e6-5qZ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="7EL-Ok-tFd">
+                                                                <rect key="frame" x="0.0" y="182" width="92" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZW-J2-W4u">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21K-e3-Vld">
+                                                                        <rect key="frame" x="62" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3M-yZ-9fK"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUl-vZ-o2s">
+                                                                <rect key="frame" x="0.0" y="220" width="100" height="60"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JJG-p2-tOV">
+                                                                        <rect key="frame" x="20" y="0.0" width="121" height="64"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Новости Компании" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-4P-jg6">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="121" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Новости каталога" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-FX-rBX">
+                                                                                <rect key="frame" x="0.0" y="24" width="113" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Новости региона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-ee-mPs">
+                                                                                <rect key="frame" x="0.0" y="48" width="109" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="JJG-p2-tOV" firstAttribute="top" secondItem="NUl-vZ-o2s" secondAttribute="top" id="KbF-j9-leT"/>
+                                                                    <constraint firstItem="JJG-p2-tOV" firstAttribute="leading" secondItem="NUl-vZ-o2s" secondAttribute="leading" constant="20" id="SQv-B4-kBv"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="bLE-45-nV6"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="zcB-Xy-7fE"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-UN-uvK">
+                                                                <rect key="frame" x="0.0" y="288" width="98.5" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Контакты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-z2-Qqb">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrj-Eg-8xh">
+                                                                        <rect key="frame" x="68.5" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pez-eW-Zx6"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCk-gD-h48">
+                                                                <rect key="frame" x="0.0" y="326" width="100" height="60"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-Sm-0HR">
+                                                                        <rect key="frame" x="20" y="0.0" width="164" height="232"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Центральный регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtQ-UX-l13">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="134" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Московский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0M-GG-lN5">
+                                                                                <rect key="frame" x="0.0" y="24" width="126" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Северо-Западный регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjC-h7-N0u">
+                                                                                <rect key="frame" x="0.0" y="48" width="164" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Верхневолжский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhW-t3-TOM">
+                                                                                <rect key="frame" x="0.0" y="72" width="156" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Южный регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o3-za-Vej">
+                                                                                <rect key="frame" x="0.0" y="96" width="96.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Кавказский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZD-AU-gXO">
+                                                                                <rect key="frame" x="0.0" y="120" width="121.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Уральский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlK-91-PTG">
+                                                                                <rect key="frame" x="0.0" y="144" width="115.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Поволжский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-aA-Se3">
+                                                                                <rect key="frame" x="0.0" y="168" width="127.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Сибирский регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-7r-UBD">
+                                                                                <rect key="frame" x="0.0" y="192" width="119" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Дальневосточный регион" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIz-Pa-X41">
+                                                                                <rect key="frame" x="0.0" y="216" width="162" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="kgC-Sm-0HR" firstAttribute="leading" secondItem="mCk-gD-h48" secondAttribute="leading" constant="20" id="5LS-T2-jWQ"/>
+                                                                    <constraint firstItem="kgC-Sm-0HR" firstAttribute="top" secondItem="mCk-gD-h48" secondAttribute="top" id="D0N-3M-qr0"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="Mvz-EZ-NVk"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="Obr-8n-bkM"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="550" id="6iH-kz-eZO"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="QvU-2B-LtE">
+                                                <rect key="frame" x="20" y="1110" width="146.5" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Сервис" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqQ-E1-56V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Og-L8-Qjh">
+                                                        <rect key="frame" x="116.5" y="0.0" width="30" height="30"/>
+                                                        <state key="normal" title="▷">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cx-gj-gP8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SO-eI-FJ1">
+                                                <rect key="frame" x="30" y="1148" width="234" height="350"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="r06-vf-lvE" userLabel="ServicStackView">
+                                                        <rect key="frame" x="20" y="0.0" width="260.5" height="340"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="be3-vF-gE7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="260.5" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Как Оформить Заказ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9Y-xb-2Jq">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="149.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15c-DT-CFE">
+                                                                        <rect key="frame" x="230.5" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ShS-dO-U8h"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmn-eU-Bem">
+                                                                <rect key="frame" x="0.0" y="38" width="100" height="128"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U5y-Xi-90C">
+                                                                        <rect key="frame" x="20" y="0.0" width="154" height="136"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Онлайн-магазин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-5M-UDI">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="106.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Каталог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Var-RA-469">
+                                                                                <rect key="frame" x="0.0" y="24" width="50.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Заказ по артикулу" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBL-ZR-sJ2">
+                                                                                <rect key="frame" x="0.0" y="48" width="116" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Мобильное приложение" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66e-PI-cGH">
+                                                                                <rect key="frame" x="0.0" y="72" width="154" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Заказ услуги" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wys-nN-aVh">
+                                                                                <rect key="frame" x="0.0" y="96" width="82" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Автозаказ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0x3-yy-dbf">
+                                                                                <rect key="frame" x="0.0" y="120" width="64.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="U5y-Xi-90C" firstAttribute="top" secondItem="vmn-eU-Bem" secondAttribute="top" id="FnE-LF-DYd"/>
+                                                                    <constraint firstAttribute="height" constant="128" id="WVj-Nv-vLD"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="fCX-h1-Nfy"/>
+                                                                    <constraint firstItem="U5y-Xi-90C" firstAttribute="leading" secondItem="vmn-eU-Bem" secondAttribute="leading" constant="20" id="iSK-g2-u1o"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fJL-9o-zdQ">
+                                                                <rect key="frame" x="0.0" y="174" width="83.5" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Оплата" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-qE-iID">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymF-5V-7lf">
+                                                                        <rect key="frame" x="53.5" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aCh-5l-d0r"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L3-2h-xLa">
+                                                                <rect key="frame" x="0.0" y="212" width="100" height="128"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dc4-8o-IEQ">
+                                                                        <rect key="frame" x="20" y="0.0" width="192.5" height="136"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Сбербанк онлайн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRk-O4-xOc">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Банковские карты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Al-bx-dXi">
+                                                                                <rect key="frame" x="0.0" y="24" width="115" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Мобильный платеж" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3Z-vF-f3R">
+                                                                                <rect key="frame" x="0.0" y="48" width="123" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Платежные терминалы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYL-o9-kdJ">
+                                                                                <rect key="frame" x="0.0" y="72" width="146.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Электронные платежи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbK-Tv-35v">
+                                                                                <rect key="frame" x="0.0" y="96" width="142.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Пополнение счета наличными" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-CN-GnW">
+                                                                                <rect key="frame" x="0.0" y="120" width="192.5" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Dc4-8o-IEQ" firstAttribute="top" secondItem="5L3-2h-xLa" secondAttribute="top" id="72k-iP-4rB"/>
+                                                                    <constraint firstAttribute="width" constant="100" id="Oe4-Pv-OrU"/>
+                                                                    <constraint firstItem="Dc4-8o-IEQ" firstAttribute="leading" secondItem="5L3-2h-xLa" secondAttribute="leading" constant="20" id="bls-T7-9Yq"/>
+                                                                    <constraint firstAttribute="height" constant="128" id="iY0-TI-W4n"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="MWv-dN-Rk2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kkn-4a-FZj">
+                                                <rect key="frame" x="42" y="1506" width="183" height="141"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-pG-g9i">
+                                                        <rect key="frame" x="14" y="-3" width="164" height="144"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Доставка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYa-86-kfc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Возврат" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqW-Ch-W8g">
+                                                                <rect key="frame" x="0.0" y="38" width="164" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yKc-9C-u2m">
+                                                                <rect key="frame" x="0.0" y="76" width="164" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppv-b1-Ug0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oj-uw-eOB">
+                                                                        <rect key="frame" x="92.5" y="0.0" width="71.5" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B9J-g8-SwL"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="an9-X9-V0V">
+                                                                <rect key="frame" x="0.0" y="114" width="164" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Вопросы и Ответы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BR-OB-xou">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifS-q3-NjG">
+                                                                        <rect key="frame" x="134" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKx-jO-O7g"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="141" id="mKV-6m-JWh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duK-KG-o6i">
+                                                <rect key="frame" x="20" y="1655" width="183" height="141"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-rQ-r37">
+                                                        <rect key="frame" x="14" y="-3" width="161" height="144"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-Rg-ha0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Партнерство" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="set-Bg-sLa">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="30"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHw-A7-Nm0">
+                                                                        <rect key="frame" x="105.5" y="0.0" width="55.5" height="30"/>
+                                                                        <state key="normal" title="▷">
+                                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="listActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="32x-Xk-h1U"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </stackView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Пункты Выдачи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqB-ST-g49">
+                                                                <rect key="frame" x="0.0" y="38" width="161" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Отвечают Эксперты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNd-cB-8mX">
+                                                                <rect key="frame" x="0.0" y="76" width="161" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Листать Каталог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt0-iV-nqM">
+                                                                <rect key="frame" x="0.0" y="114" width="161" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="141" id="eXt-7j-z9j"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="duK-KG-o6i" secondAttribute="trailing" constant="61" id="01N-ta-mXq"/>
+                                            <constraint firstItem="cGy-iH-TUK" firstAttribute="top" secondItem="opc-oO-dYW" secondAttribute="bottom" constant="406" id="3uj-2e-rc4"/>
+                                            <constraint firstItem="vxg-vx-hhP" firstAttribute="top" secondItem="opc-oO-dYW" secondAttribute="bottom" constant="8" id="4H3-Y7-Qgb"/>
+                                            <constraint firstItem="QvU-2B-LtE" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="20" id="5O8-5m-Yu1"/>
+                                            <constraint firstAttribute="trailing" secondItem="vxg-vx-hhP" secondAttribute="trailing" constant="48" id="5Sb-Fe-vF4"/>
+                                            <constraint firstItem="Kkn-4a-FZj" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="42" id="60j-tV-syW"/>
+                                            <constraint firstItem="Bwv-qb-n1d" firstAttribute="top" secondItem="cGy-iH-TUK" secondAttribute="bottom" constant="8" id="7gB-bU-hAf"/>
+                                            <constraint firstItem="cGy-iH-TUK" firstAttribute="width" secondItem="opc-oO-dYW" secondAttribute="width" id="8CH-qU-XwM"/>
+                                            <constraint firstItem="duK-KG-o6i" firstAttribute="top" secondItem="Kkn-4a-FZj" secondAttribute="bottom" constant="8" id="BTS-9e-M14"/>
+                                            <constraint firstAttribute="height" constant="1852" id="EcF-pg-nsZ"/>
+                                            <constraint firstItem="U5q-KU-k4f" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="30" id="F5R-cI-QsI"/>
+                                            <constraint firstItem="opc-oO-dYW" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="8" id="G9g-aI-sbc"/>
+                                            <constraint firstItem="vxg-vx-hhP" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="21" id="OIf-5I-BfB"/>
+                                            <constraint firstItem="2SO-eI-FJ1" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="30" id="Oxp-b6-Aek"/>
+                                            <constraint firstItem="Plr-Ag-33e" firstAttribute="top" secondItem="7CY-GR-w4W" secondAttribute="top" id="Ryo-Is-QIU"/>
+                                            <constraint firstItem="U5q-KU-k4f" firstAttribute="top" secondItem="Bwv-qb-n1d" secondAttribute="bottom" constant="8" id="SJy-xp-nz2"/>
+                                            <constraint firstItem="Plr-Ag-33e" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" id="V1m-HS-dTp"/>
+                                            <constraint firstItem="Bwv-qb-n1d" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="20" id="b5l-xc-J5k"/>
+                                            <constraint firstItem="cGy-iH-TUK" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="8" id="bcl-EL-ZKM"/>
+                                            <constraint firstAttribute="trailing" secondItem="2SO-eI-FJ1" secondAttribute="trailing" id="fDm-g6-ud0"/>
+                                            <constraint firstAttribute="trailing" secondItem="U5q-KU-k4f" secondAttribute="trailing" id="gzv-Uc-vct"/>
+                                            <constraint firstItem="duK-KG-o6i" firstAttribute="leading" secondItem="7CY-GR-w4W" secondAttribute="leading" constant="20" id="hLY-vO-4UW"/>
+                                            <constraint firstAttribute="trailing" secondItem="Plr-Ag-33e" secondAttribute="trailing" id="kig-sx-UfE"/>
+                                            <constraint firstItem="Kkn-4a-FZj" firstAttribute="top" secondItem="2SO-eI-FJ1" secondAttribute="bottom" constant="8" id="kjv-QY-wQL"/>
+                                            <constraint firstItem="QvU-2B-LtE" firstAttribute="top" secondItem="U5q-KU-k4f" secondAttribute="bottom" constant="8" id="o8i-fc-0wj"/>
+                                            <constraint firstItem="2SO-eI-FJ1" firstAttribute="top" secondItem="QvU-2B-LtE" secondAttribute="bottom" constant="8" id="r3d-tz-ZSE"/>
+                                            <constraint firstItem="opc-oO-dYW" firstAttribute="top" secondItem="Plr-Ag-33e" secondAttribute="bottom" id="xEB-3G-sOv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kkn-4a-FZj" secondAttribute="trailing" constant="39" id="xJI-FU-a2z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7CY-GR-w4W" firstAttribute="leading" secondItem="m33-Uh-Hkc" secondAttribute="leading" id="7L6-Cn-VuP"/>
+                                    <constraint firstItem="7CY-GR-w4W" firstAttribute="top" secondItem="m33-Uh-Hkc" secondAttribute="top" id="i1t-Xv-3id"/>
+                                    <constraint firstItem="I11-lv-Pq5" firstAttribute="trailing" secondItem="7CY-GR-w4W" secondAttribute="trailing" id="lwo-Qs-emi"/>
+                                    <constraint firstAttribute="bottom" secondItem="7CY-GR-w4W" secondAttribute="bottom" id="u8W-vV-qQ9"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="TkZ-bP-Uuw"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="I11-lv-Pq5"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fMc-Xh-mTz" appends="YES" id="xc9-tb-YHr"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Su-hn-I1m"/>
-                            <constraint firstAttribute="bottom" secondItem="wKy-MQ-hbv" secondAttribute="bottom" id="1eE-aD-aGZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m33-Uh-Hkc" secondAttribute="trailing" constant="150" id="37g-4p-HmQ"/>
                             <constraint firstItem="R3Q-Fv-qgg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5PE-EX-yKP"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Pp-2f-rKy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLc-wz-wMq" secondAttribute="trailing" id="8qq-l2-JVv"/>
-                            <constraint firstItem="wKy-MQ-hbv" firstAttribute="top" secondItem="lLc-wz-wMq" secondAttribute="bottom" id="BMc-ra-jgn"/>
+                            <constraint firstAttribute="bottom" secondItem="m33-Uh-Hkc" secondAttribute="bottom" id="CJd-cP-Tyr"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="top" secondItem="uy8-oB-B8f" secondAttribute="bottom" id="CJn-i1-ry6"/>
+                            <constraint firstItem="m33-Uh-Hkc" firstAttribute="top" secondItem="uy8-oB-B8f" secondAttribute="bottom" constant="56" id="CNq-pm-cpp"/>
+                            <constraint firstItem="m33-Uh-Hkc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fp8-FS-CEV"/>
                             <constraint firstItem="aOd-MB-Y6B" firstAttribute="width" secondItem="Wrn-i1-AfY" secondAttribute="width" id="LM7-Su-f66"/>
                             <constraint firstAttribute="bottom" secondItem="i2S-nn-e2r" secondAttribute="bottom" id="W5c-8V-dxP"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="gAc-ju-U0M"/>
-                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="gts-O6-agM"/>
+                            <constraint firstItem="i2S-nn-e2r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="104" id="gts-O6-agM"/>
                             <constraint firstItem="i2S-nn-e2r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hEr-o6-u6N"/>
                             <constraint firstItem="uy8-oB-B8f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hX3-0f-Lxc"/>
                             <constraint firstItem="aOd-MB-Y6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j95-7U-d5N"/>
                             <constraint firstItem="aOd-MB-Y6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="mYh-F0-HfI"/>
-                            <constraint firstItem="wKy-MQ-hbv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wKW-9a-JYd"/>
                             <constraint firstItem="lLc-wz-wMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wXi-sG-4KI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HRU-2Q-Ude"/>
+                    <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="activityIndicator" destination="R3Q-Fv-qgg" id="jGS-IS-jd7"/>
                         <outlet property="backButton" destination="aOd-MB-Y6B" id="HWA-XJ-RE4"/>
-                        <outlet property="listStackView" destination="hgI-4g-Wgd" id="LW2-P4-suh"/>
                         <outlet property="logoImage" destination="uy8-oB-B8f" id="4gE-7H-sig"/>
-                        <outlet property="mainToProductConstraint" destination="sIt-IF-vdL" id="xwf-zX-gcy"/>
                         <outlet property="menuButton" destination="Wrn-i1-AfY" id="1SF-B6-xFx"/>
-                        <outlet property="openListButton" destination="IW7-vC-8oS" id="eyw-1W-5Oc"/>
-                        <outlet property="searchBar" destination="uVG-Le-TGr" id="bbJ-yo-cCb"/>
-                        <outlet property="sideBarLeadingConstraint" destination="wKW-9a-JYd" id="0bg-mz-UHV"/>
-                        <outlet property="slideView" destination="wKy-MQ-hbv" id="bvY-7e-ik1"/>
+                        <outlet property="openProductButton" destination="twq-hC-IfB" id="7Hh-lc-oLW"/>
+                        <outlet property="productHeightConst" destination="3uj-2e-rc4" id="ZHU-EX-Nm3"/>
+                        <outlet property="productStackView" destination="vxg-vx-hhP" id="Iyo-PP-kUG"/>
+                        <outlet property="scrollSlideView" destination="m33-Uh-Hkc" id="nNg-NS-I7v"/>
+                        <outlet property="searchBar" destination="Plr-Ag-33e" id="1J6-ex-TKl"/>
+                        <outlet property="slideScrollViewLeadingConst" destination="7L6-Cn-VuP" id="uFV-yh-3Dt"/>
+                        <outlet property="slideView" destination="7CY-GR-w4W" id="YwX-Sx-GyM"/>
+                        <outlet property="slideViewLeadingConst" destination="7L6-Cn-VuP" id="mqH-UT-N8r"/>
                         <outlet property="webView" destination="i2S-nn-e2r" id="aYk-lI-Cxa"/>
                     </connections>
                 </viewController>
@@ -331,7 +958,7 @@
                 </tapGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="fMc-Xh-mTz">
                     <connections>
-                        <action selector="panGest:" destination="BYZ-38-t0r" id="YEt-ig-qbI"/>
+                        <action selector="panGest:" destination="BYZ-38-t0r" id="Run-rF-V96"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
